@@ -87,6 +87,9 @@ VideojsWidget.prototype.render = function(parent, nextSibling) {
   if (this.vidPreload) {
     dataSetup["preload"] = this.vidPreload;
   }
+  if (this.vidPoster) {
+    dataSetup["poster"] = this.vidPoster;
+  }
 
   // Finalize the setup parameters and then add our video element.
   this.videojsDomNode.setAttribute("data-setup", JSON.stringify(dataSetup));
@@ -121,6 +124,7 @@ VideojsWidget.prototype.execute = function() {
   this.vidLoop = this.getAttribute("loop");
   this.vidMuted = this.getAttribute("muted");
   this.vidPreload = this.getAttribute("preload");
+  this.vidPreload = this.getAttribute("poster");
 
   // "Don't forget about the Children!"
   this.makeChildWidgets();
@@ -142,6 +146,7 @@ VideojsWidget.prototype.refresh = function(changedTiddlers) {
     || changedAttributes["loop"]
     || changedAttributes["muted"]
     || changedAttributes["preload"]
+    || changedAttributes["poster"]
   ) {
     this.refreshSelf();
     return true;

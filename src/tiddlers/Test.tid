@@ -1,11 +1,11 @@
 created: 20180113154644623
-modified: 20180113171010505
-tags:
+modified: 20180113181257892
+tags: 
 title: Test
 type: text/vnd.tiddlywiki
 
 Test
 
-<$videojs controls="controls" fluid="fluid" aspectratio="16:9" preload="auto">
+<$videojs controls="controls" aspectratio="16:9" preload="auto" fluid="fluid" class="vjs-big-play-centered">
   <source src="test.mp4" type="video/mp4"/>
 </$videojs>

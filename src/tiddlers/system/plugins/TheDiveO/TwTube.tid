@@ -3,12 +3,12 @@ created: 20140902114846490
 creator: TheDiveO
 description: Your own Tube in a TiddlyWiki
 list: readme license history
-modified: 20180113144138964
+modified: 20180113183038265
 modifier: TheDiveO
 plugin-type: plugin
 source: http://thediveo.github.io/TwTube
 title: $:/plugins/TheDiveO/TwTube
 type: application/json
-version: 0.1.0-dev
+version: 0.5.0-dev
 
 {"tiddlers": {}}

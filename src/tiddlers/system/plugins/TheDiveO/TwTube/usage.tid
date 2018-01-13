@@ -1,0 +1,60 @@
+created: 20180113181502426
+modified: 20180113182717910
+tags: 
+title: $:/plugins/TheDiveO/TwTube/usage
+type: text/vnd.tiddlywiki
+
+! Usage
+
+A video player widget is created using `<$videojs>`. You then specify the audio-video media to play inside the widget using ordinary HTML5 `source` elements. Such as:
+
+```
+<$videojs controls="controls" fluid="fluid">
+  <source src="test.mp4" type="video/mp4">
+</$videojs>
+```
+
+! Widget Attributes
+
+The `<$videojs>` video player widget supports the following attributes:
+
+|!Attribute |!Description |
+|^`aspectratio` |The video player aspect ratio as two numbers separated by a colon, such as `"16:9"` or `"4:3"`. While the [[Video.js documentation states|http://docs.videojs.com/tutorial-options.html]] the aspect ratio additionally puts the player into "fluid" mode, this seems to be incorrect. You'll still need to also specify the `fluid` attribute if you want the player to scale to fit its container. |
+|^`autoplay` |When present and not empty the player automatically begins playback when it is ready.  |
+|^`class` |The CSS class or classes for the video player. You don't need to specify `"video-js"` as it gets added automatically by the widget. |
+|^`controls` |When present and not empty the player shows controls the user can interact it. If this attribute is left out the only way to start the player is using the `autoplay` attribute. |
+|^`fluid` |When present and not empty the player will scale to fit its container. |
+|^`height` |Sets the height of the video player in pixels. See also the `fluid` attribute when responsive design is needed. |
+|^`language` |Sets the initial language of the player using a language code, such as `"en"`. If not specified, the language defaults to the web browser language setting, or -- as the last resort -- to `"en"`. |
+|^`loop` |When present and not empty the the video gets looped endless and endless and ... you get the drift. |
+|^`muted` |When present and not empty then audio is muted by default. The user then can unmute audio at any time. |
+|^`poster` |URL to an image that gets displayed before the video begins playing. |
+|^`preload` |Indicates to the web browser whether media data download should begin immediately or not. Possible values are `auto`, `metadata`, and `none`. `auto` selects immediate downloading, but only if the web browser supports this. `metadata` preloads only information like video frame dimensions and duration. `none` disables preloading and the player will download the media only after the user clicked the "play" button. |
+|^`width` |Sets the width of the video player in pixels. See also the `fluid` attribute when responsive design is needed. |
+
+! Widget Content
+
+The content of the video player widget needs to be one or more media source declarations using the HTML5 `source` element. A typical example is:
+
+```
+<source src="glorous-blockbuster-XXII.mp4" type="video/mp4">
+```
+
+You can specify multiple media sources for different media formats, so that browsers can pick the format they support or even like the best.
+
+! Widget CSS Classes
+
+This is an imcomplete list of CSS classes to be used on your `<$videojs>` widgets you might find mildly useful:
+
+;`vjs-big-play-centered`
+: centers the play button over the video player widget instead of hiding it in its topleft corner. The rationale for defaulting to the topleft corner seems to be that then the button does not cover some interesting preload image details in the center.
+
+! Caveats
+
+Due to the way ~TiddlyWiki handles widget parameters, it is not enough to specify a "boolean" parameter in itself or with an empty `""` value. Instead, you need to specify some non-empty value. The actual value is, erm, actually irrelevant, as long as it is not empty. For instance:
+
+```
+<$videojs controls="controls"/>
+```
+
+Even if these parameters are (following the HTML5 standard) termed "boolean" values, you ''cannot'' specify a false value. Any value is taken as a truth value.

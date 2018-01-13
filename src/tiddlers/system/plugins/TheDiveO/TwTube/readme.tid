@@ -1,8 +1,26 @@
 created: 20140902083641711
 creator: TheDiveO
-modified: 20180113144148003
+modified: 20180113181729067
 modifier: TheDiveO
 title: $:/plugins/TheDiveO/TwTube/readme
 type: text/vnd.tiddlywiki
 
-This //TwTube// Plugin ...
+! About
+
+This //~TwTube// plugin provides a video player using the new `<$videojs>` widget. The video player uses the free and open source HTML5 [[Video.js|https://videojs.com/]] video player.
+
+! Installation
+
+Simply drag [[this TwTube plugin|$:/plugins/TheDiveO/TwTube]] into your own [[TiddlyWiki 5|https://tiddlywiki.com/]] wikis, save, reload, and start enjoying the `<$videojs>` widget.
+
+! Quickstart
+
+A video player widget is created using `<$videojs>`. You then specify the audio-video media to play inside the widget using ordinary HTML5 `source` elements. Such as:
+
+```
+<$videojs controls="controls" fluid="fluid">
+  <source src="test.mp4" type="video/mp4">
+</$videojs>
+```
+
+For more details, please refer to our comprehensive [[usage guide|$:/plugins/TheDiveO/TwTube/usage]].
