@@ -1,13 +1,13 @@
 created: 20140902083641711
 creator: TheDiveO
-modified: 20180113181729067
+modified: 20180113184931479
 modifier: TheDiveO
 title: $:/plugins/TheDiveO/TwTube/readme
 type: text/vnd.tiddlywiki
 
 ! About
 
-This //~TwTube// plugin provides a video player using the new `<$videojs>` widget. The video player uses the free and open source HTML5 [[Video.js|https://videojs.com/]] video player.
+This ''~TwTube'' plugin provides a video player using the new `<$videojs>` widget. The video player uses the free and open source HTML5 [[Video.js|https://videojs.com/]] video player.
 
 ! Installation
 
