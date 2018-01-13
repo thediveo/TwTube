@@ -9,6 +9,6 @@ plugin-type: plugin
 source: http://thediveo.github.io/TwTube
 title: $:/plugins/TheDiveO/TwTube
 type: application/json
-version: 0.0.1-dev
+version: 0.1.0-dev
 
 {"tiddlers": {}}

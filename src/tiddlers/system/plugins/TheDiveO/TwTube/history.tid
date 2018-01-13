@@ -5,5 +5,6 @@ modifier: TheDiveO
 title: $:/plugins/TheDiveO/TwTube/history
 type: text/vnd.tiddlywiki
 
-* ''0.0.1'' -- plugin ...
-
+* ''0.1.0''
+** introduces `<$videojs>` widget.
+** supports most attributes (parameters) which the `<video>` and `<video-js>` elements offer.

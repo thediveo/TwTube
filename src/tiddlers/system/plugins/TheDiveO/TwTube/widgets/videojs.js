@@ -37,13 +37,59 @@ VideojsWidget.prototype = new Widget();
 // Render widget into the DOM...
 VideojsWidget.prototype.render = function(parent, nextSibling) {
   this.parentDomNode = parent;
+  this.computeAttributes();
   this.execute();
   // Create our DOM elements...
   this.shellDomNode = this.document.createElement("div");
   this.shellDomNode.setAttribute("data-vjs-player", "");
   this.videojsDomNode = this.document.createElement("video-js");
-  this.videojsDomNode.setAttribute("class", "video-js");
-  this.videojsDomNode.setAttribute("width", "100%");
+  // General
+  if (this.vidClass) {
+    this.videojsDomNode.setAttribute("class", "video-js " + this.vidClass);
+  } else {
+    this.videojsDomNode.setAttribute("class", "video-js");
+  }
+
+  // Lump all the many video/video-js element attributes into
+  // a JSON object and later hand that over in one go.
+  var dataSetup = {};
+
+  // Multikulti
+  if (this.vidLanguage) {
+    dataSetup["language"] = this.vidLanguage;
+  }
+  // Geometry
+  if (this.vidAspectRatio) {
+    dataSetup["aspectratio"] = this.vidAspectRatio;
+  }
+  if (this.vidFluid) {
+    dataSetup["fluid"] = this.vidFluid;
+  }
+  if (this.vidWidth) {
+    dataSetup["width"] = this.vidWidth;
+  }
+  if (this.vidHeight) {
+    dataSetup["height"] = this.vidHeight;
+  }
+  // Player control
+  if (this.vidAutoplay) {
+    dataSetup["autoplay"] = this.vidAutoplay;
+  }
+  if (this.vidControls) {
+    dataSetup["controls"] = this.vidControls;
+  }
+  if (this.vidLoop) {
+    dataSetup["loop"] = this.vidLoop;
+  }
+  if (this.vidMuted) {
+    dataSetup["muted"] = this.vidMuted;
+  }
+  if (this.vidPreload) {
+    dataSetup["preload"] = this.vidPreload;
+  }
+
+  // Finalize the setup parameters and then add our video element.
+  this.videojsDomNode.setAttribute("data-setup", JSON.stringify(dataSetup));
   this.shellDomNode.appendChild(this.videojsDomNode);
   // ...and insert them into the DOM.
   parent.insertBefore(this.shellDomNode, nextSibling);
@@ -55,12 +101,51 @@ VideojsWidget.prototype.render = function(parent, nextSibling) {
   }
 };
 
-//
+// Compute the internal state of the videojs widget. Also make
+// sure that all child widgets/elements get correctly created.
 VideojsWidget.prototype.execute = function() {
+  // Get our parameters...
+  // General
+  this.vidClass = this.getAttribute("class");
+  // Multikulti
+  this.vidLanguage = this.getAttribute("language");
+  //this.vidLanguages = this.getAttribute("languages");
+  // Geometry
+  this.vidAspectRatio = this.getAttribute("aspectratio");
+  this.vidFluid = this.getAttribute("fluid");
+  this.vidWidth = this.getAttribute("width");
+  this.vidHeight = this.getAttribute("height");
+  // Player control
+  this.vidAutoplay = this.getAttribute("autoplay");
+  this.vidControls = this.getAttribute("controls");
+  this.vidLoop = this.getAttribute("loop");
+  this.vidMuted = this.getAttribute("muted");
+  this.vidPreload = this.getAttribute("preload");
+
+  // "Don't forget about the Children!"
   this.makeChildWidgets();
 };
 
+// Decide whether the video widget needs to be refreshed, either
+// because its own state changed or its children.
 VideojsWidget.prototype.refresh = function(changedTiddlers) {
+  var changedAttributes = this.computeAttributes();
+  if (
+    changedAttributes["class"]
+    || changedAttributes["language"]
+    || changedAttributes["aspectratio"]
+    || changedAttributes["fluid"]
+    || changedAttributes.width
+    || changedAttributes.height
+    || changedAttributes["autoplay"]
+    || changedAttributes["controls"]
+    || changedAttributes["loop"]
+    || changedAttributes["muted"]
+    || changedAttributes["preload"]
+  ) {
+    this.refreshSelf();
+    return true;
+  }
   return false;
 };
 
