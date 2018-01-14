@@ -1,8 +1,12 @@
-created: 20180113154644623
-modified: 20180114174945267
-tags: 
+created: 20180114213104643
+modified: 20180114213308012
 title: Videojs Widget Example
 type: text/vnd.tiddlywiki
+
+<$list filter="[all[tiddlers+shadow]tag[$:/tags/TwTubeVideojsSkinPlugin]]">
+  <<currentTiddler>>
+</$list>
+
 
 <$videojs controls="controls" aspectratio="16:9" preload="auto" fluid="fluid" class="vjs-big-play-centered">
   <source src="test.mp4" type="video/mp4"/>

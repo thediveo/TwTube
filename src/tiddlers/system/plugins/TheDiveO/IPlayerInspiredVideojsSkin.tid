@@ -1,12 +1,12 @@
-author: TheDiveO + zanechua
+author: TheDiveO + Vijay Dubb
 created: 20180114164553193
-description: Sublime-inspired skin for Videojs
+description: iPlayer-inspired skin for Videojs
 list: readme license history
-modified: 20180114213701259
+modified: 20180114213714027
 plugin-type: plugin
 source: http://thediveo.github.io/TwTube
 tags: $:/tags/TwTubeVideojsSkinPlugin
-title: $:/plugins/TheDiveO/SublimeInspiredVideojsSkin
+title: $:/plugins/TheDiveO/IPlayerInspiredVideojsSkin
 type: application/json
 version: 1.0.0
 

@@ -1,0 +1,7 @@
+created: 20180114170253183
+modified: 20180114211345389
+tags: 
+title: $:/plugins/TheDiveO/IPlayerInspiredVideojsSkin/readme
+type: text/vnd.tiddlywiki
+
+Provides the [[iPlayer-inspired Video.js skin|https://github.com/VD39/videojs-iplayer-skin]] (~GitHub) by [[Vijay Dubb/VD39|https://github.com/VD39]] (~GitHub) for use with the [[TwTube plugin|https://github.com/TheDiveO/TwTube]] (//you guessed right// ... ~GitHub). Simply install this plugin into your ~TiddlyWiki alongside the ~TwTube plugin and you're done.

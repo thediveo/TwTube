@@ -1,6 +1,6 @@
 created: 20140902083641711
 creator: TheDiveO
-modified: 20180114174841144
+modified: 20180114211600111
 modifier: TheDiveO
 title: $:/plugins/TheDiveO/TwTube/readme
 type: text/vnd.tiddlywiki
@@ -28,3 +28,5 @@ For more details, please refer to our comprehensive [[usage guide|$:/plugins/The
 ! Skins
 
 Simply install one of the ~TwTube Video.js Skin plugins alongside to switch to another Video.js skin.
+
+>''Note:'' You can even install //multiple// Skin plugins simultaneously, but then you'll need to disable all those you don't want to use at the moment. You can switch the skins at any time, thanks to the incredible magic of ~TiddlyWiki and CSS. Though enabling //multiple// skin plugins //simultaneously// will lead to interesting player designs.
