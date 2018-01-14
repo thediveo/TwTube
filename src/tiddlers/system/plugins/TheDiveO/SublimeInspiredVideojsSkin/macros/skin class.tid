@@ -1,0 +1,7 @@
+created: 20180114174339454
+modified: 20180114175748874
+tags: $:/tags/Macro
+title: $:/plugins/TheDiveO/SublimeInspiredVideojsSkin/macros/skin class
+type: text/vnd.tiddlywiki
+
+\define twtube-skin-classes() vjs-sublime-skin

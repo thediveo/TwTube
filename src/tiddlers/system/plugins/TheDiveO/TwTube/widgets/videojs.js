@@ -110,6 +110,12 @@ VideojsWidget.prototype.execute = function() {
   // Get our parameters...
   // General
   this.vidClass = this.getAttribute("class");
+  // CSS classes: we take additional CSS class definitions from
+  // skin plugins into account.
+  var skinClasses = this.getVariable("twtube-skin-classes");
+  if (skinClasses !== undefined) {
+    this.vidClass += " " + skinClasses;
+  }
   // Multikulti
   this.vidLanguage = this.getAttribute("language");
   //this.vidLanguages = this.getAttribute("languages");

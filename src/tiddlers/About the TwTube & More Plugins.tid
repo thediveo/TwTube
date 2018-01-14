@@ -1,0 +1,23 @@
+created: 20141001162614812
+creator: TheDiveO
+modified: 20180114180357094
+modifier: TheDiveO
+title: About the TwTube & More Plugins
+type: text/vnd.tiddlywiki
+
+! ~TwTube Plugin
+
+This is the ''~TwTube'' plugin version "<$view tiddler="$:/plugins/TheDiveO/TwTube" field="version" />" (<$list filter="[[$:/plugins/TheDiveO/TwTube/readme]is[shadow]]" emptyMessage="<span style='color: #c00; font-weight: bold'>development</span>">release</$list> wiki).
+
+* [[readme|$:/plugins/TheDiveO/TwTube/readme]]
+* [[widget usage|$:/plugins/TheDiveO/TwTube/usage]]
+* [[history|$:/plugins/TheDiveO/TwTube/history]]
+* [[license|$:/plugins/TheDiveO/TwTube/license]]
+
+! Sublime-Inspired Video.js Skin Plugin
+
+The Sublime-inspired skin plugin version is "<$view tiddler="$:/plugins/TheDiveO/SublimeInspiredVideojsSkin" field="version" />" (<$list filter="[[$:/plugins/TheDiveO/SublimeInspiredVideojsSkin/readme]is[shadow]]" emptyMessage="<span style='color: #c00; font-weight: bold'>development</span>">release</$list> wiki).
+
+* [[readme|$:/plugins/TheDiveO/SublimeInspiredVideojsSkin/readme]]
+* [[history|$:/plugins/TheDiveO/SublimeInspiredVideojsSkin/history]]
+* [[license|$:/plugins/TheDiveO/SublimeInspiredVideojsSkin/license]]

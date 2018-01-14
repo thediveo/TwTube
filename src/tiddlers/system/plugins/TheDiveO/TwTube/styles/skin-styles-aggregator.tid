@@ -1,0 +1,9 @@
+created: 20180113191643863
+modified: 20180114180710588
+tags: $:/tags/Stylesheet +[tag[$:/tags/TwTubeVideojsSkin
+title: $:/plugins/TheDiveO/TwTube/styles/skin-styles-aggregator
+type: text/vnd.tiddlywiki
+
+<$list filter="$:/plugins/TheDiveO/TwTube/styles/default-videojs-skin.css [all[shadows+tiddlers]tag[$:/tags/TwTubeVideojsSkin]]">
+<$transclude/>
+</$list>

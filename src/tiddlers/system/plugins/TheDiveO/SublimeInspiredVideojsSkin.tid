@@ -1,0 +1,13 @@
+author: TheDiveO + zanechua
+created: 20180114164553193
+description: Sublime-inspired skin for Videojs
+list: readme license history
+modified: 20180114175848739
+plugin-type: plugin
+source: http://thediveo.github.io/TwTube
+tags: 
+title: $:/plugins/TheDiveO/SublimeInspiredVideojsSkin
+type: application/json
+version: 1.0.0
+
+{"tiddlers": {}}

@@ -1,7 +1,6 @@
 created: 20180113145042261
-modified: 20180113145151615
-tags: $:/tags/Stylesheet
-title: $:/plugins/TheDiveO/TwTube/styles/video-js.css
+modified: 20180113191838604
+title: $:/plugins/TheDiveO/TwTube/styles/default-videojs-skin.css
 type: text/css
 
 .video-js .vjs-big-play-button .vjs-icon-placeholder:before, .vjs-button > .vjs-icon-placeholder:before, .video-js .vjs-modal-dialog, .vjs-modal-dialog .vjs-modal-dialog-content {

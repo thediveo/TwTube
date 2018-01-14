@@ -13,6 +13,8 @@
 		"release": [
 			"--packplugin", "$:/plugins/TheDiveO/TwTube",
 			"--rendertemplatedtiddler", "$:/plugins/TheDiveO/TwTube", "$:/core/templates/tid-tiddler", "twtube.tid", "", "text/plain",
+      "--packplugin", "$:/plugins/TheDiveO/SublimeInspiredVideojsSkin",
+      "--rendertemplatedtiddler", "$:/plugins/TheDiveO/SublimeInspiredVideojsSkin", "$:/core/templates/tid-tiddler", "sublimeskin.tid", "", "text/plain",
 			"--rendertiddler", "$:/plugins/TheDiveO/ThirdFlow/templates/save-all-wo-plugin-sources", "twtube.html", "text/plain"
 		]
     },

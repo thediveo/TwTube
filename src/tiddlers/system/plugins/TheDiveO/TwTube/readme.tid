@@ -1,6 +1,6 @@
 created: 20140902083641711
 creator: TheDiveO
-modified: 20180113184931479
+modified: 20180114174841144
 modifier: TheDiveO
 title: $:/plugins/TheDiveO/TwTube/readme
 type: text/vnd.tiddlywiki
@@ -24,3 +24,7 @@ A video player widget is created using `<$videojs>`. You then specify the audio-
 ```
 
 For more details, please refer to our comprehensive [[usage guide|$:/plugins/TheDiveO/TwTube/usage]].
+
+! Skins
+
+Simply install one of the ~TwTube Video.js Skin plugins alongside to switch to another Video.js skin.
