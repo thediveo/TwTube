@@ -1,4 +1,6 @@
 /*\
+created: 20180113145438225
+modified: 20180113150322040
 title: $:/plugins/TheDiveO/TwTube/filters/is/enabled.js
 type: application/javascript
 module-type: isfilteroperator
