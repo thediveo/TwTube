@@ -1,0 +1,12 @@
+created: 20180114182654131
+modified: 20180114182731430
+tags: $:/tags/TwTubeVideojsSkin
+title: $:/plugins/TheDiveO/IPlayerInspiredVideojsSkin/styles/fixes.css
+type: text/css
+
+.vjs-big-play-centered .vjs-big-play-button {
+  top: 50% !important;
+  left: 50% !important;
+  margin-top: -42px !important;
+  margin-left: -42px !important;
+}

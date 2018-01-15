@@ -1,7 +1,8 @@
 created: 20180114170309007
-modified: 20180114211212294
+modified: 20180115175500944
 tags: 
 title: $:/plugins/TheDiveO/IPlayerInspiredVideojsSkin/history
 type: text/vnd.tiddlywiki
 
+* ''1.0.1'' -- adds support for centered (big) play button, similar to what is supported in the default skin as well as some other skins.
 * ''1.0.0'' -- first release of the iPlayer-inspired Video.js Skin plugin.
