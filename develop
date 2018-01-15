@@ -7,6 +7,4 @@
 tiddlywiki \
 	editions/develop \
 	--verbose \
-	--mediaserver media 8080 $:/core/save/all text/plain text/html $1 $2 
-
-#	--server 8080 $:/core/save/all text/plain text/html $1 $2
+	--mediaserver media 8080 $:/core/save/all text/plain text/html $1 $2

@@ -6,5 +6,5 @@ rem
 tiddlywiki ^
 	editions\develop ^
 	--verbose ^
-	--server 8080 $:/core/save/all text/plain text/html %1 %2
+	--mediaserver 8080 $:/core/save/all text/plain text/html %1 %2
 rem	|| exit 1
