@@ -106,7 +106,6 @@ var Command = function(params, commander, callback) {
 		method: "GET",
 		path: new RegExp("^" + urlprefix + "(.+)$"),
 		handler: function(request, response, state) {
-			$tw.utils.log("media request for " + request.url);
 			// Get the URL path and resource name, and make sure
 			// that the client cannot play tricks on us by trying
 			// to get outside the mediapath root using lots of
@@ -114,6 +113,7 @@ var Command = function(params, commander, callback) {
 			try {
 				var medrsc = mediapath + url.parse(request.url).pathname.substr(urlprefix.length-1);
 			} catch (err) {
+				$tw.utils.log("400 " + request.url, "brown/orange");
 				response.writeHead(400, {
 					"Content-Type": "text/plain"
 				});
@@ -121,7 +121,6 @@ var Command = function(params, commander, callback) {
 				response.end();
 				return;
 			}
-			$tw.utils.log("media resource: " + medrsc);
 
 			// Make sure that the requested media exists and that it actually
 			// is a file. We need this in order to determine the size of
@@ -133,6 +132,7 @@ var Command = function(params, commander, callback) {
 				// NOP: leave mediastat undefined.
 			}
 			if (mediastat === undefined || !mediastat.isFile()) {
+				$tw.utils.log("404 " + request.url, "brown/orange");
 				response.writeHead(404, {
 					"Content-Type": "text/plain"
 				});
@@ -145,6 +145,7 @@ var Command = function(params, commander, callback) {
 			// Determine the media type from the media file extension.
 			var filetypeinfo = $tw.utils.getFileExtensionInfo(path.extname(medrsc));
 			if (filetypeinfo === null) {
+				$tw.utils.log("500 " + request.url, "red");
 				response.writeHead(500, {
 					"Content-Type": "text/plain"
 				});
@@ -174,7 +175,7 @@ var Command = function(params, commander, callback) {
 				// the server must respond with status 416.
 				var start = 1, end = 0;
 				var parts = range.replace(/bytes=/, "").split("-");
-				if (parts.length != 2) {
+				if (parts.length == 2) {
 					if (parts[0].length && parts[1].length) {
 						// case (1) from-to
 						start = parseInt(parts[0], 10);
@@ -192,10 +193,15 @@ var Command = function(params, commander, callback) {
 						}
 					}
 				}
-
+				// Now that we've decoded the range the HTTP client asks
+				// for, let's see if it's satisfiable, then do a partial
+				// transfer (206) of the media data; otherwise, inform the
+				// HTTP client of the allowed range (416) for the media
+				// resource, but don't send any media data.
 				if (start > end || start >= mediasize || end >= mediasize) {
 					// The range is not satisfiable, so it's time for a
 					// status 416 response with the maximum allowed range.
+					$tw.utils.log("416 */" + mediasize + " " + request.url, "brown/orange");
 					response.writeHead(416, {
 						"Accept-Ranges": "bytes",
 						"Content-Range": "bytes */" + mediasize,
@@ -206,7 +212,7 @@ var Command = function(params, commander, callback) {
 					return;
 				}
 
-				$tw.utils.log("media served piece-wise from " + start + " to " + end + "/" + mediasize);
+				$tw.utils.log("206 " + start + "-" + end + "/" + mediasize + " " + request.url, "green");
 				response.writeHead(206, {
 					"Accept-Ranges": "bytes",
 					"Content-Range": "bytes " + start + "-" + end + "/" + mediasize,
@@ -219,7 +225,7 @@ var Command = function(params, commander, callback) {
 				// the response the media file stream to send back. Sweet and simple.
 				// Nevertheless we indicate to the client that we would accept
 				// ranges in GET requests to these media resources.
-				$tw.utils.log("media served en bloc");
+				$tw.utils.log("200 */" + mediasize + " " + request.url, "green");
 				response.writeHead(200, {
 					"Accept-Ranges": "bytes",
 					"Content-Type": mediatype,
