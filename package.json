@@ -6,7 +6,8 @@
   "homepage": "https://github.com/TheDiveO/TwTube.git",
   "bugs": "https://github.com/TheDiveO/TwTube/issues",
   "scripts": {
-    "develop": "tiddlywiki --server editions/develop --verbose --mediaserver media 8080 $:/core/save/all text/plain text/html",
+    "start": "tiddlywiki editions/develop --verbose --mediaserver media 8080 $:/core/save/all text/plain text/html",
+    "develop": "tiddlywiki editions/develop --verbose --mediaserver media 8080 $:/core/save/all text/plain text/html",
     "release": "tiddlywiki editions/release --verbose --build release"
   },
   "repository": {
