@@ -53,7 +53,7 @@ var Command = function(params, commander, callback) {
 	var mediaparam = (params[0] || "media").split("=");
 	var mediapath = path.resolve(mediaparam[0]);
 	$tw.utils.log("media path: " + mediapath);
-	
+
 	var urlprefix = mediaparam[1];
 	if (urlprefix) {
 		// URL prefix explicitly specified, so we use that. For convenience,
@@ -65,7 +65,7 @@ var Command = function(params, commander, callback) {
 		// to the CWD or an absolute prefix in case the media files are
 		// not inside the CWD or any subdir thereof.
 		urlprefix = mediapath;
-		cwd = path.resolve();
+		var cwd = path.resolve();
 		if (urlprefix.substr(0, cwd.length) == cwd) {
 			urlprefix = urlprefix.substr(cwd.length);
 		}
@@ -112,8 +112,8 @@ var Command = function(params, commander, callback) {
 			// to get outside the mediapath root using lots of
 			// "../" path elements.
 			try {
-				var medrsc = mediapath + url.parse(request.url).pathname.substr(1);
-			} except (err) {
+				var medrsc = mediapath + url.parse(request.url).pathname.substr(urlprefix.length-1);
+			} catch (err) {
 				response.writeHead(400, {
 					"Content-Type": "text/plain"
 				});
@@ -121,6 +121,7 @@ var Command = function(params, commander, callback) {
 				response.end();
 				return;
 			}
+			$tw.utils.log("media resource: " + medrsc);
 
 			// Make sure that the requested media exists and that it actually
 			// is a file. We need this in order to determine the size of
@@ -173,37 +174,38 @@ var Command = function(params, commander, callback) {
 				// the server must respond with status 416.
 				var start = 1, end = 0;
 				var parts = range.replace(/bytes=/, "").split("-");
-				if (parts.length != 2
-				if (parts[0].length && parts[1].length) {
-					// case (1) from-to
-					start = parseInt(parts[0], 10);
-					end = parseInt(parts[1], 10);
-				} else if (parts[0].length && !parts[1].length) {
-					// case (2) from-
-					start = parseInt(parts[0], 10);
-					end = mediasize - 1;
-				} else if (!parts[0].length && parts[1].length) {
-					// case (3) -last
-					end = mediasize - 1;
-					start = mediasize - parseInt(parts[1], 10);
-					if (start < 0) { // see RFC 7233, 2.1
-						start = 0;
+				if (parts.length != 2) {
+					if (parts[0].length && parts[1].length) {
+						// case (1) from-to
+						start = parseInt(parts[0], 10);
+						end = parseInt(parts[1], 10);
+					} else if (parts[0].length && !parts[1].length) {
+						// case (2) from-
+						start = parseInt(parts[0], 10);
+						end = mediasize - 1;
+					} else if (!parts[0].length && parts[1].length) {
+						// case (3) -last
+						end = mediasize - 1;
+						start = mediasize - parseInt(parts[1], 10);
+						if (start < 0) { // see RFC 7233, 2.1
+							start = 0;
+						}
 					}
 				}
-				
+
 				if (start > end || start >= mediasize || end >= mediasize) {
 					// The range is not satisfiable, so it's time for a
 					// status 416 response with the maximum allowed range.
 					response.writeHead(416, {
 						"Accept-Ranges": "bytes",
 						"Content-Range": "bytes */" + mediasize,
-						"Content-Type": "text/plain" 
+						"Content-Type": "text/plain"
 					});
 					response.write("416 requested range not satisfiable");
 					response.end();
 					return;
 				}
-				
+
 				$tw.utils.log("media served piece-wise from " + start + " to " + end + "/" + mediasize);
 				response.writeHead(206, {
 					"Accept-Ranges": "bytes",
