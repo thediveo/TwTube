@@ -1,6 +1,6 @@
 created: 20141001162614812
 creator: TheDiveO
-modified: 20180114211119822
+modified: 20180117204910919
 modifier: TheDiveO
 title: About the TwTube & More Plugins
 type: text/vnd.tiddlywiki
@@ -14,18 +14,8 @@ This is the ''~TwTube'' plugin version "<$view tiddler="$:/plugins/TheDiveO/TwTu
 * [[history|$:/plugins/TheDiveO/TwTube/history]]
 * [[license|$:/plugins/TheDiveO/TwTube/license]]
 
-! Sublime-Inspired Video.js Skin Plugin
+! Additional Skin Plugins
 
-The Sublime-inspired skin plugin version is "<$view tiddler="$:/plugins/TheDiveO/SublimeInspiredVideojsSkin" field="version" />" (<$list filter="[[$:/plugins/TheDiveO/SublimeInspiredVideojsSkin/readme]is[shadow]]" emptyMessage="<span style='color: #c00; font-weight: bold'>development</span>">release</$list> wiki).
-
-* [[readme|$:/plugins/TheDiveO/SublimeInspiredVideojsSkin/readme]]
-* [[history|$:/plugins/TheDiveO/SublimeInspiredVideojsSkin/history]]
-* [[license|$:/plugins/TheDiveO/SublimeInspiredVideojsSkin/license]]
-
-! iPlayer-Inspired Video.js Skin Plugin
-
-The iPlayer-inspired skin plugin version is "<$view tiddler="$:/plugins/TheDiveO/IPlayerInspiredVideojsSkin" field="version" />" (<$list filter="[[$:/plugins/TheDiveO/IPlayerInspiredVideojsSkin/readme]is[shadow]]" emptyMessage="<span style='color: #c00; font-weight: bold'>development</span>">release</$list> wiki).
-
-* [[readme|$:/plugins/TheDiveO/IPlayerInspiredVideojsSkin/readme]]
-* [[history|$:/plugins/TheDiveO/IPlayerInspiredVideojsSkin/history]]
-* [[license|$:/plugins/TheDiveO/IPlayerInspiredVideojsSkin/license]]
+* [[Sublime-inspired skin|$:/plugins/TheDiveO/SublimeInspiredVideojsSkin]]
+* [[iPlayer-inspired skin|$:/plugins/TheDiveO/IPlayerInspiredVideojsSkin]]
+* [[YouTube-inspired skin|$:/plugins/TheDiveO/YouTubeInspiredVideojsSkin]]

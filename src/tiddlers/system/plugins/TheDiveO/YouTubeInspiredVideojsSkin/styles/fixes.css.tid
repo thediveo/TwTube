@@ -1,0 +1,10 @@
+created: 20180114182654131
+modified: 20180114182731430
+tags: $:/tags/TwTubeVideojsSkin
+title: $:/plugins/TheDiveO/YouTubeInspiredVideojsSkin/styles/fixes.css
+type: text/css
+
+.video-js .vjs-time-control {
+  padding-left: 0;
+  padding-right: 0;
+}
