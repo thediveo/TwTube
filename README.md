@@ -14,7 +14,8 @@ $ npm start
 
 Visit http://localhost:8080
 
-Watch the demo, read the included documentation, muck around with the code and tiddlers.
+Watch the demo, read the documentation included in the demo TiddylWiki,
+and muck around with the code and tiddlers to your likings.
 
 To stop the server:
 
