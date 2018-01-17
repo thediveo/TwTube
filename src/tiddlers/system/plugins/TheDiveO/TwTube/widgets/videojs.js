@@ -130,7 +130,7 @@ VideojsWidget.prototype.execute = function() {
   this.vidLoop = this.getAttribute("loop");
   this.vidMuted = this.getAttribute("muted");
   this.vidPreload = this.getAttribute("preload");
-  this.vidPreload = this.getAttribute("poster");
+  this.vidPoster = this.getAttribute("poster");
 
   // "Don't forget about the Children!"
   this.makeChildWidgets();
