@@ -1,5 +1,5 @@
 created: 20180114213104643
-modified: 20180115172422823
+modified: 20180117205323466
 title: Videojs Widget Example
 type: text/vnd.tiddlywiki
 
@@ -9,9 +9,11 @@ Available additional player skins (check to enable):
 
 <ul style="list-style-type: none;">
   <$list filter="[all[tiddlers+shadow]tag[$:/tags/TwTubeVideojsSkinPlugin]]">
-    <$set name="skinname" tiddler=<<currentTiddler>> field="description">
-      <li><$checkbox tiddler=<<pluginconfigtiddler>> field="text" checked="no" unchecked="yes" default="no" > <<skinname>></$checkbox></li>
-    </$set>
+    <li>
+      <$checkbox tiddler=<<pluginconfigtiddler>> field="text" checked="no" unchecked="yes" default="no" >
+        <$view field="description" format="text" />
+      </$checkbox>
+    </li>
   </$list>
 </ul>
 
