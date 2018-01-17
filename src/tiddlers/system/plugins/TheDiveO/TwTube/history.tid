@@ -5,6 +5,8 @@ modifier: TheDiveO
 title: $:/plugins/TheDiveO/TwTube/history
 type: text/vnd.tiddlywiki
 
+* ''1.0.2''
+** fixes `poster` attribute of `<$videjs>` widget to be overwritten with the value of the `preload` attribute.
 * ''1.0.0''
 ** introduces `<$videojs>` [[Video.js player|https://videojs.com/]] widget to ~TiddlyWiki 5.
 ** supports most of the attributes (parameters) the `<video>` and `<video-js>` elements have to offer.
@@ -14,7 +16,7 @@ type: text/vnd.tiddlywiki
 *** [[iPlayer-inspired skin|$:/plugins/TheDiveO/IPlayerInspiredVideojsSkin]]
 ** supports multiple skin plugins installed side-by-side: enable only one skin plugin at a time to avoid funny skinning result.
 ** adds media serving functionality to ~TiddlyWiki servers running on Node.js
-*** use the `--mediaserver media-path ...` command instead of `--server ...`. 
+*** use the `--mediaserver media-path ...` command instead of `--server ...`.
 *** supports HTTP GET range requests for media resources.
 ** supports npm scripts (on *nix only):
 *** `npm start` starts the ~TwTube development ~TiddlyWiki server at http://localhost:8080.
