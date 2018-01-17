@@ -1,11 +1,23 @@
 created: 20140902083720188
 creator: TheDiveO
-modified: 20180113182830832
+modified: 20180117133333754
 modifier: TheDiveO
 title: $:/plugins/TheDiveO/TwTube/history
 type: text/vnd.tiddlywiki
 
-* ''0.1.0''
-** introduces `<$videojs>` widget.
+* ''1.0.0''
+** introduces `<$videojs>` [[Video.js player|https://videojs.com/]] widget to ~TiddlyWiki 5.
 ** supports most of the attributes (parameters) the `<video>` and `<video-js>` elements have to offer.
-** an extensive list of supported attributes can be found in [[$:/plugins/TheDiveO/TwTube/usage]].
+** an extensive list of supported widget attributes can be found in [[$:/plugins/TheDiveO/TwTube/usage]].
+** supports Video.js player skin plugins, when the default skin isn't enough:
+*** [[Sublime-inspired skin|$:/plugins/TheDiveO/SublimeInspiredVideojsSkin]]
+*** [[iPlayer-inspired skin|$:/plugins/TheDiveO/IPlayerInspiredVideojsSkin]]
+** supports multiple skin plugins installed side-by-side: enable only one skin plugin at a time to avoid funny skinning result.
+** adds media serving functionality to ~TiddlyWiki servers running on Node.js
+*** use the `--mediaserver media-path ...` command instead of `--server ...`. 
+*** supports HTTP GET range requests for media resources.
+** supports npm scripts (on *nix only):
+*** `npm start` starts the ~TwTube development ~TiddlyWiki server at http://localhost:8080.
+*** `npm stop` stops the ~TwTube ~TiddlyWiki server.
+*** `npm run-script develop` runs the ~TwTube development ~TiddlyWiki server in the foreground.
+*** `npm run-script release` generates release files in `editions/release/output` of the project file tree.
