@@ -13,10 +13,16 @@
 		"release": [
 			"--packplugin", "$:/plugins/TheDiveO/TwTube",
 			"--rendertemplatedtiddler", "$:/plugins/TheDiveO/TwTube", "$:/core/templates/tid-tiddler", "twtube.tid", "", "text/plain",
+
       "--packplugin", "$:/plugins/TheDiveO/SublimeInspiredVideojsSkin",
       "--rendertemplatedtiddler", "$:/plugins/TheDiveO/SublimeInspiredVideojsSkin", "$:/core/templates/tid-tiddler", "sublimeskin.tid", "", "text/plain",
+
       "--packplugin", "$:/plugins/TheDiveO/IPlayerInspiredVideojsSkin",
       "--rendertemplatedtiddler", "$:/plugins/TheDiveO/IPlayerInspiredVideojsSkin", "$:/core/templates/tid-tiddler", "iplayerskin.tid", "", "text/plain",
+
+      "--packplugin", "$:/plugins/TheDiveO/YouTubeInspiredVideojsSkin",
+      "--rendertemplatedtiddler", "$:/plugins/TheDiveO/YouTubeInspiredVideojsSkin", "$:/core/templates/tid-tiddler", "ytskin.tid", "", "text/plain",
+
 			"--rendertiddler", "$:/plugins/TheDiveO/ThirdFlow/templates/save-all-wo-plugin-sources", "twtube.html", "text/plain"
 		]
     },

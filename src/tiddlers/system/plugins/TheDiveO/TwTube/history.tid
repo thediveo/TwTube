@@ -1,10 +1,12 @@
 created: 20140902083720188
 creator: TheDiveO
-modified: 20180117133333754
+modified: 20180117210741268
 modifier: TheDiveO
 title: $:/plugins/TheDiveO/TwTube/history
 type: text/vnd.tiddlywiki
 
+* ''1.0.3''
+** adds new ~YouTube-inspired skin, generated with the [[Videojs Skin Generator|http://www.scriptsmashup.com/Video_Skin_Generator/Videojs/videojs-skin-generator.html]] and some tweaking.
 * ''1.0.2''
 ** fixes `poster` attribute of `<$videjs>` widget to be overwritten with the value of the `preload` attribute.
 * ''1.0.0''
