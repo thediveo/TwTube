@@ -25,5 +25,5 @@ $ npm stop
 To generate release files:
 
 ```bash
-$ npm release
+$ npm run-script release
 ```
