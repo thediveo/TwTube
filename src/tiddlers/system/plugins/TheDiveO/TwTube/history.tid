@@ -1,11 +1,11 @@
 created: 20140902083720188
 creator: TheDiveO
-modified: 20180113182830832
+modified: 20180117131349145
 modifier: TheDiveO
 title: $:/plugins/TheDiveO/TwTube/history
 type: text/vnd.tiddlywiki
 
-* ''0.1.0''
-** introduces `<$videojs>` widget.
+* ''1.0.0''
+** introduces `<$videojs>` widget to ~TiddlyWiki 5.
 ** supports most of the attributes (parameters) the `<video>` and `<video-js>` elements have to offer.
 ** an extensive list of supported attributes can be found in [[$:/plugins/TheDiveO/TwTube/usage]].
