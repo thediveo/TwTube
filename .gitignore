@@ -1,1 +1,2 @@
-./tw.pid
+tw.pid
+node_modules/*

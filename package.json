@@ -4,23 +4,28 @@
   "author": "TheDiveO",
   "description": "Video.js player plugin and skin plugins for TiddlyWiki 5",
   "homepage": "https://github.com/TheDiveO/TwTube.git",
+  "license": "(MIT OR Apache-2.0 OR CC-BY-3.0)",
   "bugs": "https://github.com/TheDiveO/TwTube/issues",
+
+  "main": "twtube.js",
+
   "scripts": {
     "start": "tiddlywiki editions/develop --verbose --mediaserver media 8080 $:/core/save/all text/plain text/html & echo $! > tw.pid",
     "stop": "kill `cat tw.pid` && rm tw.pid",
     "develop": "tiddlywiki editions/develop --verbose --mediaserver media 8080 $:/core/save/all text/plain text/html",
     "release": "tiddlywiki editions/release --verbose --build release"
   },
+
   "repository": {
     "type": "git",
     "url": "https://github.com/TheDiveO/TwTube.git"
   },
+
   "dependencies": {
     "tiddlywiki": ">=5.1.11"
   },
   "devDependencies": {},
   "bundleDependencies": [],
-  "license": "(MIT OR Apache-2.0 OR CC-BY-3.0)",
   "engines": {
     "node": ">=0.8.2"
   }
