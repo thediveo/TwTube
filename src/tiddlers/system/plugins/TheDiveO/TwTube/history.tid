@@ -5,6 +5,8 @@ modifier: TheDiveO
 title: $:/plugins/TheDiveO/TwTube/history
 type: text/vnd.tiddlywiki
 
+* ''dev''
+** adds pseudo node main package, so you can run the development server also using `$ node ./twtube`.
 * ''1.0.3''
 ** adds new ~YouTube-inspired skin, generated with the [[Videojs Skin Generator|http://www.scriptsmashup.com/Video_Skin_Generator/Videojs/videojs-skin-generator.html]] and some tweaking.
 * ''1.0.2''
