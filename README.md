@@ -4,7 +4,27 @@ A [Video.js widget plugin](https://videojs.com/) together with
 player skin plugins and a Nodejs-based TiddlyWiki media-serving
 enhancement. All forged from the [TiddlyWiki](https://tiddlywiki.com) core.
 
+# Installation
+
+Clone the TwTube git repository https://github.com/TheDiveO/TwTube.git and change into the local copy.
+
+```bash
+$ git clone https://github.com/TheDiveO/TwTube.git
+$ cd TwTube
+```
+
+Install the required dependencies:
+
+```bash
+$ npm install tiddlywiki
+```
+
+Done.
+
+
 # Usage
+
+## Live Demo and Development
 
 Start the TwTube development TiddlyWiki server:
 
@@ -22,6 +42,14 @@ To stop the server:
 ```bash
 $ npm stop
 ```
+
+Alternatively, you can simply run the `develop` script and stop the server then using Ctrl-C:
+
+```bash
+$ npm develop
+```
+
+## Release
 
 To generate release files:
 
