@@ -1,12 +1,13 @@
 created: 20140902083720188
 creator: TheDiveO
-modified: 20180117210741268
+modified: 20180122145126228
 modifier: TheDiveO
 title: $:/plugins/TheDiveO/TwTube/history
 type: text/vnd.tiddlywiki
 
 * ''dev''
 ** adds pseudo node main package, so you can run the development server also using `$ node ./twtube`.
+** fixes handling of media resources where their paths and/or filename contain URI encoded characters.
 * ''1.0.3''
 ** adds new ~YouTube-inspired skin, generated with the [[Videojs Skin Generator|http://www.scriptsmashup.com/Video_Skin_Generator/Videojs/videojs-skin-generator.html]] and some tweaking.
 * ''1.0.2''

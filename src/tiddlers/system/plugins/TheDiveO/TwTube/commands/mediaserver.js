@@ -111,7 +111,9 @@ var Command = function(params, commander, callback) {
 			// to get outside the mediapath root using lots of
 			// "../" path elements.
 			try {
-				var medrsc = mediapath + url.parse(request.url).pathname.substr(urlprefix.length-1);
+				var medrsc = mediapath
+					+ decodeURIComponent(url.parse(request.url).pathname)
+							.substr(urlprefix.length-1);
 			} catch (err) {
 				$tw.utils.log("400 " + request.url, "brown/orange");
 				response.writeHead(400, {
