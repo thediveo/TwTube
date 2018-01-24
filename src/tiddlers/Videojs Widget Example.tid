@@ -1,5 +1,5 @@
 created: 20180114213104643
-modified: 20180117205323466
+modified: 20180124190435312
 title: Videojs Widget Example
 type: text/vnd.tiddlywiki
 
@@ -18,7 +18,7 @@ Available additional player skins (check to enable):
 </ul>
 
 <$videojs controls="controls" aspectratio="16:9" preload="auto" fluid="fluid" class="vjs-big-play-centered">
-  <source src="/media/BigBuckBunny_SampleVideo_1280x720_1mb.mp4" type="video/mp4"/>
+  <source src="media/BigBuckBunny_SampleVideo_1280x720_1mb.mp4" type="video/mp4"/>
 </$videojs>
 
 This short demo video is (c) copyright 2008, Blender Foundation / [[http://www.bigbuckbunny.org]], CC-BY 3.0 attribution license.
