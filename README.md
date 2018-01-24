@@ -25,23 +25,23 @@ If no skin plugin is installed or enabled, then the default Video.js skin
 gets used that comes with the TwTube plugin.
 
 
+# Live Demo
+
+Visit our [TiddlyWiki Video.js live demo](http://thediveo.github.io/TwTube).
+
+
 # Installation
 
-Clone the TwTube git repository https://github.com/TheDiveO/TwTube.git and
-change into the local copy.
+To install, simply run:
 
 ```bash
-$ git clone https://github.com/TheDiveO/TwTube.git
+$ git clone https://github.com/TheDiveO/TWTube
 $ cd TwTube
+$ npm install
 ```
 
-Install the required dependencies (well, the only _one_):
-
-```bash
-$ npm install tiddlywiki
-```
-
-Done.
+Done; this clones the TwTube GitHub repository, and then installs the required
+dependencies into your local copy. Sweet'n'simple.
 
 
 # Usage
@@ -65,16 +65,31 @@ To stop the server:
 $ npm stop
 ```
 
-Alternatively, you can simply run the `develop` script and stop the server then using Ctrl-C:
+Alternatively, you can simply run the `develop` script and stop the server then
+using Ctrl-C:
 
 ```bash
-$ npm develop
+$ npm run develop
 ```
 
-## Release
+## Generate Release Files
 
 To generate release files:
 
 ```bash
-$ npm run-script release
+$ npm run release
 ```
+
+The actual release files to generate are wired up in the
+`./editions/release/tiddlywiki.info` configuration file. When you look at it,
+you'll notice several sections:
+
+* currently four sections starting with `--packplugin` commands that package the
+  contents of a plugin into its plugin tiddler, and then using
+  `--rendertemplatedtiddler` render the plugin into a `.tid` file for easy
+  drag-and-drop installation.
+
+* The final `--rendertiddler` command then generates the demonstration wiki
+  HTML file that also includes the final plugins, but not the individual plugin
+  source tiddlers anymore. So this can be used to test that the plugins work
+  as expected in a user's TiddlyWiki.
