@@ -91,6 +91,9 @@ VideojsWidget.prototype.render = function(parent, nextSibling) {
     dataSetup["poster"] = this.vidPoster;
   }
 
+  // HACK / TODO
+  dataSetup["plugins"] = {"persistvolume": {namespace: "twtube"}};
+
   // Finalize the setup parameters and then add our video element.
   this.videojsDomNode.setAttribute("data-setup", JSON.stringify(dataSetup));
   this.shellDomNode.appendChild(this.videojsDomNode);
