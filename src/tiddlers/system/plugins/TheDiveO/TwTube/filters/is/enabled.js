@@ -28,7 +28,6 @@ exports.enabled = function(source, prefix, options) {
 		// Is the tiddler in question a shadow tiddler? Then the TW core will
 		// tell us to which plugin it belongs; this is called the "source".
 		var pluginTitle = options.wiki.getShadowSource(title);
-		console.log("checking", title, "for shadow source:", pluginTitle);
 		if (pluginTitle === null) {
 			// Hmm. This tiddler is not a shadow tiddler. But it might be, erm,
 			// shadowing the shadow tiddler in a plugin. This may be the case when
@@ -52,12 +51,10 @@ exports.enabled = function(source, prefix, options) {
 		// If we got a non-empty plugin title one way or the other, we
 		// now check whether the plugin has been disabled. If not, add
 		// the title to the result list.
-		console.log("disable check on plugin:", pluginTitle);
 		if (pluginTitle !== null && pluginTitle !== "") {
 			var pluginConfigDisabled = options.wiki.getTiddler("$:/config/Plugins/Disabled/" + pluginTitle);
 			if ((((pluginConfigDisabled && pluginConfigDisabled.fields.text) || "").trim() !== "yes")
 					=== noninvert) {
-				console.log("accepted:", title);
 				results.push(title);
 			}
 		}
