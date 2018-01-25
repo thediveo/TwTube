@@ -37,7 +37,6 @@ exports.enabled = function(source, prefix, options) {
 			// titles namespace.
 			var titleElements = title.split("/");
 			do {
-				console.log("checking for plugin-type on:", titleElements.join("/"));
 				var t = options.wiki.getTiddler(titleElements.join("/"));
 				if (t) {
 					if (t.hasField("plugin-type")) {
