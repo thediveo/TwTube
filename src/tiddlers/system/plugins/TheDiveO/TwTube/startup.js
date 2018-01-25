@@ -29,11 +29,19 @@ exports.synchronous = true;
 // We then pull in the Video.js video player base module from its
 // library tiddler. Afterwards, we load any Video.js framework
 // plugins we find...
+//
+// ...oh, did I mention that we need to run through all these loops
+// only when we're running inside a browser?!
 exports.startup = function TwTubeStartup() {
   if ($tw.browser) {
-    console.log("TwTube startup...");
+    // We *NEED* to get our Video.js library activated here, because
+    // the videojs plugins rely on it being active by now.
     var videojs = $tw.modules.execute("$:/plugins/TheDiveO/TwTube/libraries/video.js");
 
+    // Prepare a template context for loading video.js plugins; as
+    // there may be multiple plugins we simply setup a clean context
+    // once from which we later clone throw-away contexts just for
+    // the purposes of video.js plugin activation.
     var context = $tw.utils.extend({}, {
       console: console,
       setInterval: setInterval,
@@ -45,17 +53,20 @@ exports.startup = function TwTubeStartup() {
       $tw: $tw
     });
 
+    // TODO
     var twtuberequire = function TwTubeRequire(moduleTitle, contextTitle) {
       if ((moduleTitle.substr(0, 3) !== "$:/")
         && (moduleTitle.substr(0, 1) !== ".")) {
         // could be a pseudo-absolute module title which in fact should be
         // taken as relative to this module. So try to resolve as relative.
         try {
-          console.log("trying ./"+moduleTitle);
-          mod = $tw.modules.execute("./" + moduleTitle, contextTitle);
+          var absmodtitle = contextTitle + "/" + moduleTitle;
+          console.log("trying", absmodtitle);
+          var mod = $tw.modules.execute(absmodtitle, "");
           console.log("succeeded.");
           return mod;
         } catch (e) {
+          console.log(e);
         };
       }
       console.log("falling back to trying "+moduleTitle);
@@ -70,10 +81,15 @@ exports.startup = function TwTubeStartup() {
     $tw.utils.each(vjsplugins, function loadplugin(pluginTitle, index) {
       console.log("loading plugin", pluginTitle);
       var vjsplugincode = $tw.wiki.getTiddlerText(pluginTitle, "");
-      context.require = function(moduleTitle) {
+      var pluginexports = {};
+      var plugincontext = $tw.utils.extend({}, context, {
+        module: {exports: pluginexports},
+        exports: pluginexports,
+      });
+      plugincontext.require = function(moduleTitle) {
         return twtuberequire(moduleTitle, "$:/plugins/TheDiveO/TwTube/libraries");
       };
-      $tw.utils.evalSandboxed(vjsplugincode, context, pluginTitle);
+      $tw.utils.evalSandboxed(vjsplugincode, plugincontext, pluginTitle);
     });
 
   } // if $tw.browser
