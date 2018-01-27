@@ -1,0 +1,12 @@
+created: 20180126205823852
+modified: 20180126210055994
+tags: $:/tags/VideojsPluginConfig
+title: $:/plugins/TheDiveO/VideojsHotkeys/videojs.persistvolume.config
+type: application/json
+
+{
+  "hotkeys": {
+    "alwaysCaptureHotkeys": "true",
+    "seekStep": "15"
+  }
+}

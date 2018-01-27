@@ -78,7 +78,6 @@ exports.startup = function TwTubeStartup() {
         // at all. So we first check with our (compact) list of known
         // aliases; if there's a match, then go for it!
         if (aliases[moduleTitle]) {
-          console.log("alias require:", moduleTitle, "-->", aliases[moduleTitle]);
           return $tw.modules.execute(aliases[moduleTitle], "");
         }
         // It's none of the known aliases, thus we now try to resolve in
@@ -109,7 +108,6 @@ exports.startup = function TwTubeStartup() {
     // They should NOT have a "module-type" field set.
     var vjsplugins = $tw.wiki.filterTiddlers(VIDEOJS_PLUGIN_FILTER);
     $tw.utils.each(vjsplugins, function loadplugin(pluginTitle, index) {
-      console.log("loading videojs plugin:", pluginTitle);
       var vjsplugincode = $tw.wiki.getTiddlerText(pluginTitle, "");
       var pluginexports = {};
       var pluginsandbox = $tw.utils.extend({}, sandbox, {

@@ -1,11 +1,11 @@
 created: 20141001162614812
 creator: TheDiveO
-modified: 20180117204910919
+modified: 20180127151053639
 modifier: TheDiveO
 title: About the TwTube & More Plugins
 type: text/vnd.tiddlywiki
 
-! ~TwTube Plugin
+! ~TwTube ~TiddylWiki Plugin
 
 This is the ''~TwTube'' plugin version "<$view tiddler="$:/plugins/TheDiveO/TwTube" field="version" />" (<$list filter="[[$:/plugins/TheDiveO/TwTube/readme]is[shadow]]" emptyMessage="<span style='color: #c00; font-weight: bold'>development</span>">release</$list> wiki).
 
@@ -14,8 +14,13 @@ This is the ''~TwTube'' plugin version "<$view tiddler="$:/plugins/TheDiveO/TwTu
 * [[history|$:/plugins/TheDiveO/TwTube/history]]
 * [[license|$:/plugins/TheDiveO/TwTube/license]]
 
-! Additional Skin Plugins
+! Skin Plugins
 
 * [[Sublime-inspired skin|$:/plugins/TheDiveO/SublimeInspiredVideojsSkin]]
 * [[iPlayer-inspired skin|$:/plugins/TheDiveO/IPlayerInspiredVideojsSkin]]
 * [[YouTube-inspired skin|$:/plugins/TheDiveO/YouTubeInspiredVideojsSkin]]
+
+! Video.js Plugins
+
+* Persistent volume plugin -- already included and enabled as part of the basic ~TwTube plugin. See also: [[configuration|$:/plugins/TheDiveO/TwTube/videojsplugins/videojs.persistvolume.config]], [[videojs-persistvolume plugin|https://github.com/theonion/videojs-persistvolume]] project page (~GitHub).
+* [[Hotkeys plugin|$:/plugins/TheDiveO/VideojsHotkeys]]. See also: [[configuration|$:/plugins/TheDiveO/VideojsHotkeys/videojs.persistvolume.config]], [[videojs-hotkeys|https://github.com/ctd1500/videojs-hotkeys]] project page (~GitHub).
