@@ -1,11 +1,11 @@
 created: 20140902083720188
 creator: TheDiveO
-modified: 20180127151147867
+modified: 20180127153917979
 modifier: TheDiveO
 title: $:/plugins/TheDiveO/TwTube/history
 type: text/vnd.tiddlywiki
 
-* ''dev''
+* ''1.0.5''
 ** adds support for Video.js plugins.
 ** adds Video.js persistent volume plugin.
 ** adds Video.js hotkeys plugin.
