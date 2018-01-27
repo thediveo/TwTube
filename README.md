@@ -11,18 +11,25 @@ but not for production use. For production, deploy the release TiddlyWiki
 HTML file on your web (media) production server, such as a document sharing
 point.
 
-The following plugins are available:
-- TwTube: the video player plugin. This plugin also includes media server
-  extension, but this is just a 9kB Javascript module, so it isn't really
-  overhead and worth the much easier handling.
-- (optional) YouTube-inspired player skin plugin.
-- (optional) Sublime-inspired player skin plugin.
-- (optional) iPlayer-inspired player skin plugin.
+The following (TiddlyWiki) plugins are available:
+- **TwTube**: the basic video player plugin.
+   * Please note that this plugin also includes media server extension to be
+     used when developing -- but don't be afraid, as this is but a 9kB
+     Javascript module, so it isn't really overhead and truely worth the
+     much easier (plugin) handling.
+- (_optional_) **YouTube-inspired player skin** plugin.
+- (_optional_) **Sublime-inspired player skin** plugin.
+- (_optional_) **iPlayer-inspired player skin** plugin.
+- (_optional_) **Hotkeys player plugin**.
 
-You can install multiple player skin plugins simultaneously, but then you
+You can install multiple _player skin plugins_ simultaneously, but then you
 need to ensure to disable all skin plugins except at most _one_ of them.
 If no skin plugin is installed or enabled, then the default Video.js skin
 gets used that comes with the TwTube plugin.
+
+For the Video.js player plugins (not: _skin_ plugins), there is no such
+limitation: you can install any number you want and have them all active at
+the same time.
 
 
 # Live Demo
