@@ -13,7 +13,12 @@ module-type: widget
 "use strict";
 
 //
-var VIDEOJS_PLUGINCFG_FILTER = "[tag[$:/tags/VideojsPluginConfig]type[application/json]]";
+var VIDEOJS_PLUGINCFG_FILTER =
+  "["
+  + "all[shadows+tiddlers]"
+  + "tag[$:/tags/VideojsPluginConfig]"
+  + "type[application/json]"
+  + "]";
 
 // Stuff we need...
 var Widget = require("$:/core/modules/widgets/widget.js").widget;
@@ -26,6 +31,14 @@ var Widget = require("$:/core/modules/widgets/widget.js").widget;
 // useless stub.
 var videojs = null;
 if ($tw.browser) {
+  // Even more dragons here: we need to lazy load the Video.js plugins.
+  // That's not due to the Video.js but instead to startup issues with
+  // the TiddlyWiki boot/core mechanics. To cut a long story short: we
+  // simply load only when this widget module gets pulled in for the
+  // first time. This seems to be safe, otherwise the plugin loader
+  // might get run **after** this module initializes.
+  require("$:/plugins/TheDiveO/TwTube/libraries/videojspluginloader.js")
+    .loadplugins();
   videojs = require("$:/plugins/TheDiveO/TwTube/libraries/video.js");
 }
 

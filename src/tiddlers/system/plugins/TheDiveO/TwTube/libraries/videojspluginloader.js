@@ -1,11 +1,11 @@
 /*\
 created: 20140902083720188
 type: application/javascript
-title: $:/plugins/TheDiveO/TwTube/startups/videojspluginloader.js
+title: $:/plugins/TheDiveO/TwTube/libraries/videojspluginloader.js
 modifier: TheDiveO
 modified: 20180125125026949
 creator: TheDiveO
-module-type: startup
+module-type: library
 \*/
 (function(){
 
@@ -16,27 +16,25 @@ module-type: startup
 // Where the video.js (CommonJS) module is to be found in this plugin.
 var TWTUBE_VIDEOJS = "$:/plugins/TheDiveO/TwTube/libraries/video.js";
 // Filter expression matching videojs plugin tiddlers.
-var VIDEOJS_PLUGIN_FILTER = "[type[application/javascript]tag[$:/tags/VideojsPlugin]]";
+var VIDEOJS_PLUGIN_FILTER =
+  "["
+  + "all[shadows+tiddlers]"
+  + "type[application/javascript]"
+  + "tag[$:/tags/VideojsPlugin]"
+  + "]";
 
-// Some necessary TiddylWiki startup module meta/configuration data:
-// this startup module needs to be run after the "startup" startup
-// module from the TW core. The reason is that we (1) need $tw.wiki
-// to be properly populated, and (2) some performance measuring
-// stuff we don't need, but which the tiddler filtering mechanism
-// insists of getting. In consequence, or startup module needs to
-// run after the startup startup module ... I like the crazy
-// ring of this dependency definition...
-exports.name = "videojspluginloader";
-exports.after = ["startup"];
-exports.synchronous = true;
-
-// During the startup phase of a TiddlyWiki (or, rather near its end)
-// we are pulling in the Video.js video player base module from its
-// library tiddler. Next, we load any Video.js framework plugins we
+// Please note that we **CANNOT** run this module as a "startup" module,
+// due to some ugly race conditions with widget module initialization
+// due to the TiddlyWiki boot/core startup "sequence". While running
+// this via a development TiddlyWiki server works, it fails when running
+// an ordinary release TiddlyWiki. Thus, this Video.js plugin loader
+// needs to be pulled in only when the videojs widget module initializes.
+// Then we are first(!) pulling in the Video.js video player base module from
+// its library tiddler. Next, we load any Video.js framework plugins we
 // can find -- based on the special $:/tags/VideojsPlugin tag.
 // Oh, did I mention that we need to run through all these loops
 // only when we're running inside a browser?!
-exports.startup = function TwTubeStartup() {
+exports.loadplugins = function TwTubeStartup() {
   if ($tw.browser) {
     // We *NEED* to get our Video.js library activated here, because
     // the videojs plugins rely on it being active by now. Albeit we

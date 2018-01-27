@@ -6,7 +6,6 @@ modifier: TheDiveO
 modified: 20180125125001394
 creator: TheDiveO
 tags: $:/tags/VideojsPlugin
-tag: $:/tags/VideojsPlugin
 \*/
 "use strict";
 (function(factory){
