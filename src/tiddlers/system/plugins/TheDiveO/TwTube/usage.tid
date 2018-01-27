@@ -1,5 +1,5 @@
 created: 20180113181502426
-modified: 20180113182717910
+modified: 20180126212238665
 tags: 
 title: $:/plugins/TheDiveO/TwTube/usage
 type: text/vnd.tiddlywiki
@@ -30,6 +30,7 @@ The `<$videojs>` video player widget supports the following attributes:
 |^`muted` |When present and not empty then audio is muted by default. The user then can unmute audio at any time. |
 |^`poster` |URL to an image that gets displayed before the video begins playing. |
 |^`preload` |Indicates to the web browser whether media data download should begin immediately or not. Possible values are `auto`, `metadata`, and `none`. `auto` selects immediate downloading, but only if the web browser supports this. `metadata` preloads only information like video frame dimensions and duration. `none` disables preloading and the player will download the media only after the user clicked the "play" button. |
+|^`pluginsdata` |Specifies plugin (configuration) data in form of a JSON string. For instance: <pre>pluginsdata='{"persistvolume": {"namespace": "twtube"}}'</pre> Alternatively, you can specify plugin configuration data in data tiddlers of type `application/json` and tagged with `$:/tags/VideojsPluginConfig`. |
 |^`width` |Sets the width of the video player in pixels. See also the `fluid` attribute when responsive design is needed. |
 
 ! Widget Content
@@ -48,6 +49,22 @@ This is an imcomplete list of CSS classes to be used on your `<$videojs>` widget
 
 ;`vjs-big-play-centered`
 : centers the play button over the video player widget instead of hiding it in its topleft corner. The rationale for defaulting to the topleft corner seems to be that then the button does not cover some interesting preload image details in the center.
+
+! Plugin Configuration Data
+
+The Video.js player widget supports Video.js plugins. The player widget comes with one Video.js plugin out of the box: a plugin for making your player volume setting persistent. However, you need to activate Video.js plugins by specifying plugin configuration data. Otherwise, these Video.js plugins won't get activated. Configuration data can be specified either:
+
+* using the `pluginsdata=` attribute of a `<$videojs>` widget; this allows for an individual per-player configuration.
+
+* using Video.js plugin configuration data tiddlers, tagged with `$:/tags/VideojsPluginConfig` and of type `application/json`.
+
+! Persistent Volume Setting Plugin
+
+As we deem the persistent volume setting plugin incredibly useful, it's enabled by default. The player's volume setting is stored in either your browser's persistent storage, or, if that isn't available, in a cookie.
+
+In the default configuration, the `<$videojs>` widgets in ''all ~TiddlyWikis share the same volume setting''. If you change the player volume in one ~TiddlyWiki, the other ~TiddlyWikis will pick up this most recent volume setting automatically.
+
+If you want instead //individual// player volume settings per ~TiddlyWiki, then overwrite the plugin tiddler [[$:/plugins/TheDiveO/TwTube/videojsplugins/videojs.persistvolume.config]] and specify a different namespace value for each of your ~TiddlyWikis.
 
 ! Caveats
 

@@ -1,0 +1,14 @@
+author: TheDiveO
+created: 20140902114846490
+creator: TheDiveO
+description: Keyboard hotkeys for the Video.js video player
+list: readme license history
+modified: 20180117210635131
+modifier: TheDiveO
+plugin-type: plugin
+source: http://thediveo.github.io/TwTube
+title: $:/plugins/TheDiveO/VideojsHotkeys
+type: application/json
+version: 1.0.0
+
+{"tiddlers": {}}

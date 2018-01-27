@@ -12,6 +12,9 @@ module-type: widget
 /*global $tw: false */
 "use strict";
 
+//
+var VIDEOJS_PLUGINCFG_FILTER = "[tag[$:/tags/VideojsPluginConfig]type[application/json]]";
+
 // Stuff we need...
 var Widget = require("$:/core/modules/widgets/widget.js").widget;
 
@@ -90,6 +93,22 @@ VideojsWidget.prototype.render = function(parent, nextSibling) {
   if (this.vidPoster) {
     dataSetup["poster"] = this.vidPoster;
   }
+  // Plugin configuration data
+  // Step (1): fetch any plugin configuration data tiddlers that might
+  // be present in this TiddlyWiki. Merge the configuration data from
+  // all these configuration data tiddlers.
+  var pluginsdata = {};
+  var pluginsdatatiddlers = $tw.wiki.filterTiddlers(VIDEOJS_PLUGINCFG_FILTER);
+  $tw.utils.each(pluginsdatatiddlers, function loadplugin(pluginDataTitle, index) {
+    var data = $tw.wiki.getTiddlerDataCached(pluginDataTitle, {});
+    $tw.utils.extend(pluginsdata, data);
+  });
+  // Step (2): merge in the configuration data from the pluginsdata=
+  // attribute, if specified.
+  try {
+    $tw.utils.extend(pluginsdata, JSON.parse(this.vidPluginsData));
+  } catch (e) {};
+  dataSetup["plugins"] = pluginsdata;
 
   // Finalize the setup parameters and then add our video element.
   this.videojsDomNode.setAttribute("data-setup", JSON.stringify(dataSetup));
@@ -131,7 +150,8 @@ VideojsWidget.prototype.execute = function() {
   this.vidMuted = this.getAttribute("muted");
   this.vidPreload = this.getAttribute("preload");
   this.vidPoster = this.getAttribute("poster");
-
+  // (plugin) configuration mechanism
+  this.vidPluginsData = this.getAttribute("pluginsdata")
   // "Don't forget about the Children!"
   this.makeChildWidgets();
 };
@@ -153,6 +173,7 @@ VideojsWidget.prototype.refresh = function(changedTiddlers) {
     || changedAttributes["muted"]
     || changedAttributes["preload"]
     || changedAttributes["poster"]
+    || changedAttributes["pluginsdata"]
   ) {
     this.refreshSelf();
     return true;

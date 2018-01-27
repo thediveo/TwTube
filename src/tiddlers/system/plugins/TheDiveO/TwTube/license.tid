@@ -1,6 +1,6 @@
 created: 20140902084022063
 creator: TheDiveO
-modified: 20180113190025163
+modified: 20180127151252098
 modifier: TheDiveO
 title: $:/plugins/TheDiveO/TwTube/license
 type: text/vnd.tiddlywiki
@@ -9,3 +9,4 @@ The ''~TwTube'' plugin is covered by the following licenses:
 
 * The plugin itself (with the exceptions below) as well as the associated demo wiki is licensed under the [[MIT License|https://opensource.org/licenses/MIT]].
 * The Video.js player (and framework) is licensed under the [[Apache License 2.0|https://opensource.org/licenses/Apache-2.0]]. See also the GitHub [[videojs/video.js|https://github.com/videojs/video.js]] project page.
+* The persistent volume Video.js plugin is licensed under the [[MIT License|https://opensource.org/licenses/MIT]].

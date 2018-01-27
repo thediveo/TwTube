@@ -1,11 +1,14 @@
 created: 20140902083720188
 creator: TheDiveO
-modified: 20180122145802138
+modified: 20180127153917979
 modifier: TheDiveO
 title: $:/plugins/TheDiveO/TwTube/history
 type: text/vnd.tiddlywiki
 
-* ''1.0.4''
+* ''1.0.5''
+** adds support for Video.js plugins.
+** adds Video.js persistent volume plugin.
+** adds Video.js hotkeys plugin.
 ** adds pseudo node main package, so you can run the development server also using `$ node ./twtube`.
 ** fixes handling of media resources where their paths and/or filename contain URI encoded characters.
 * ''1.0.3''
