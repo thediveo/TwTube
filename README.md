@@ -13,6 +13,11 @@ point.
 
 The following (TiddlyWiki) plugins are available:
 - **TwTube**: the basic video player plugin.
+   * Includes the **Pesistent Volume** player plugin which stores your volume
+     and mute settings in your browser for "_a better user experience_". (How
+     many times did we hear that ... and were reminded of that famous
+     [Sledge Hammer](https://en.wikipedia.org/wiki/Sledge_Hammer!) bonmot:
+     "_Trust me, I know what I'm doing_"?.
    * Please note that this plugin also includes media server extension to be
      used when developing -- but don't be afraid, as this is but a 9kB
      Javascript module, so it isn't really overhead and truely worth the
