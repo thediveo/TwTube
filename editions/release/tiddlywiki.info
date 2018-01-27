@@ -23,6 +23,9 @@
       "--packplugin", "$:/plugins/TheDiveO/YouTubeInspiredVideojsSkin",
       "--rendertemplatedtiddler", "$:/plugins/TheDiveO/YouTubeInspiredVideojsSkin", "$:/core/templates/tid-tiddler", "ytskin.tid", "", "text/plain",
 
+      "--packplugin", "$:/plugins/TheDiveO/VideojsHotkeys",
+      "--rendertemplatedtiddler", "$:/plugins/TheDiveO/VideojsHotkeys", "$:/core/templates/tid-tiddler", "videojshotkeys.tid", "", "text/plain",
+
 			"--rendertiddler", "$:/plugins/TheDiveO/ThirdFlow/templates/save-all-wo-plugin-sources", "twtube.html", "text/plain"
 		]
     },
