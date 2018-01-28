@@ -1,8 +1,9 @@
 author: TheDiveO + zanechua
+caption: Sublime-inspired Skin
 created: 20180114164553193
 description: Sublime-inspired skin for Videojs
 list: readme license history
-modified: 20180114213701259
+modified: 20180128153702886
 plugin-type: plugin
 source: http://thediveo.github.io/TwTube
 tags: $:/tags/TwTubeVideojsSkinPlugin

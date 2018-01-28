@@ -27,14 +27,10 @@ The following (TiddlyWiki) plugins are available:
 - (_optional_) **iPlayer-inspired player skin** plugin.
 - (_optional_) **Hotkeys player plugin**.
 
-You can install multiple _player skin plugins_ simultaneously, but then you
-need to ensure to disable all skin plugins except at most _one_ of them.
-If no skin plugin is installed or enabled, then the default Video.js skin
-gets used that comes with the TwTube plugin.
-
-For the Video.js player plugins (not: _skin_ plugins), there is no such
-limitation: you can install any number you want and have them all active at
-the same time.
+You can install multiple additional _player skin plugins_ simultaneously.
+There's a new Control Panel tab "Media Player Skins" which shows the currently
+installed Video.js skin plugins from which you can choose. Of course, there's
+always the Default Skin.
 
 
 # Live Demo

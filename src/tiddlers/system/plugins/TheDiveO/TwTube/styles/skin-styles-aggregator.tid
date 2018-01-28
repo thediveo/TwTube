@@ -1,9 +1,12 @@
 created: 20180113191643863
-modified: 20180114212853611
+modified: 20180128161252220
 tags: $:/tags/Stylesheet
 title: $:/plugins/TheDiveO/TwTube/styles/skin-styles-aggregator
 type: text/vnd.tiddlywiki
 
-<$list filter="$:/plugins/TheDiveO/TwTube/styles/default-videojs-skin.css [all[shadows+tiddlers]tag[$:/tags/TwTubeVideojsSkin]!has[draft.of]is[enabled]]">
+<$set name="selected-skin-prefix" filter="[title{$:/config/TwTube/skin}addsuffix[/]]">
+<$list filter="$:/plugins/TheDiveO/TwTube/styles/videojs.css [all[shadows+tiddlers]prefix<selected-skin-prefix>tag[$:/tags/TwTubeVideojsSkin]!has[draft.of]]">
+/* Skin CSS from <$view field="title"/> */
 <$transclude/>
 </$list>
+</$set>

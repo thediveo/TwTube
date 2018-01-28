@@ -1,24 +1,18 @@
 created: 20180114213104643
-modified: 20180126210101520
+modified: 20180128160248665
 title: Videojs Widget Example
 type: text/vnd.tiddlywiki
 
-\define pluginconfigtiddler() $:/config/Plugins/Disabled/$(currentTiddler)$
-
-Available additional player skins (check to enable):
-
-<ul style="list-style-type: none;">
-  <$list filter="[all[tiddlers+shadow]tag[$:/tags/TwTubeVideojsSkinPlugin]]">
-    <li>
-      <$checkbox tiddler=<<pluginconfigtiddler>> field="text" checked="no" unchecked="yes" default="no" >
-        <$view field="description" format="text" />
-      </$checkbox>
-    </li>
-  </$list>
-</ul>
+{{$:/plugins/TheDiveO/TwTube/ui/ControlPanel/VideojsSkins}}
 
 <$videojs controls="controls" aspectratio="16:9" preload="auto" fluid="fluid" class="vjs-big-play-centered">
   <source src="media/BigBuckBunny_SampleVideo_1280x720_1mb.mp4" type="video/mp4"/>
 </$videojs>
 
 This short demo video is (c) copyright 2008, Blender Foundation / [[http://www.bigbuckbunny.org]], CC-BY 3.0 attribution license.
+
+You can also customize the skin in the control panel: <$button>
+<$action-setfield $tiddler="$:/state/tab-1749438307" text="$:/plugins/TheDiveO/TwTube/ui/ControlPanel/VideojsSkins"/>
+<$action-navigate $to="$:/ControlPanel"/>
+Open Control Panel "Media Player Skin" tab
+</$button>
