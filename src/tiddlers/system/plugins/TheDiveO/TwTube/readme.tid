@@ -1,6 +1,6 @@
 created: 20140902083641711
 creator: TheDiveO
-modified: 20180114211600111
+modified: 20180128161145144
 modifier: TheDiveO
 title: $:/plugins/TheDiveO/TwTube/readme
 type: text/vnd.tiddlywiki
@@ -27,6 +27,12 @@ For more details, please refer to our comprehensive [[usage guide|$:/plugins/The
 
 ! Skins
 
-Simply install one of the ~TwTube Video.js Skin plugins alongside to switch to another Video.js skin.
+Simply install one or several of the ~TwTube Video.js Skin plugins to be able to switch media player skins. You can then select one of these skins, or the default skin, in the control panel: <$button>
+<$action-setfield $tiddler="$:/state/tab-1749438307" text="$:/plugins/TheDiveO/TwTube/ui/ControlPanel/VideojsSkins"/>
+<$action-navigate $to="$:/ControlPanel"/>
+Open Control Panel "Media Player Skin" tab
+</$button>
 
->''Note:'' You can even install //multiple// Skin plugins simultaneously, but then you'll need to disable all those you don't want to use at the moment. You can switch the skins at any time, thanks to the incredible magic of ~TiddlyWiki and CSS. Though enabling //multiple// skin plugins //simultaneously// will lead to interesting player designs.
+! Player Plugins
+
+You can also install Video.js extension plugins. The ~TwTube plugin already includes a persistent volume plugin that stores the player volume level and muting state in the browser storage.

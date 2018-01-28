@@ -1,0 +1,14 @@
+caption: Media Player Skins
+created: 20180128151952619
+modified: 20180128155435799
+tags: $:/tags/ControlPanel
+title: $:/plugins/TheDiveO/TwTube/ui/ControlPanel/VideojsSkins
+type: text/vnd.tiddlywiki
+
+Customize the visual appearance of the [[Visual.js|https://videojs.com]] media player using skins.
+
+Video.js media player skin <$select tiddler="$:/config/TwTube/skin" default="$:/plugins/TheDiveO/TwTube">
+<$list filter="[all[tiddlers+shadow]tag[$:/tags/TwTubeVideojsSkinPlugin]sort[caption]]">
+<option value=<<currentTiddler>> ><$view field="caption"><$view field="description"/></$view></option>
+</$list>
+</$select>
