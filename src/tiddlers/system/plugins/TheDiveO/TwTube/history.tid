@@ -1,11 +1,11 @@
 created: 20140902083720188
 creator: TheDiveO
-modified: 20180128155604068
+modified: 20180128162339972
 modifier: TheDiveO
 title: $:/plugins/TheDiveO/TwTube/history
 type: text/vnd.tiddlywiki
 
-* ''dev''
+* ''1.0.6''
 ** adds media player skin selection to the [[control panel|$:/ControlPanel]]: see tab "Media Player Skins". The current selection is stored in [[$:/config/TwTube/skin]] and containes the title of the selected skin plugin, or [[$:/plugins/TheDiveO/TwTube]].
 * ''1.0.5''
 ** adds support for Video.js plugins.
