@@ -1,6 +1,7 @@
 # About TwTube
 
-Simply install this **TwTube** plugin to bring the [Video.js Media Player](https://videojs.com/)
+Simply install this [TwTube plugin](https://github.com/TheDiveO/TwTube/releases/latest)
+to bring the [Video.js Media Player](https://videojs.com/)
 to [TiddlyWiki5](https://tiddlywiki.com/). Customize the visual appearance of the media player
 with skin plugins. And optionally enhance the player functionality with Video.js plugins. 
 
