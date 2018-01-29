@@ -12,7 +12,12 @@ Wait, there's more:
 
 ## Skin Pugins
 
-The following additional player skins are available as plugins:
+The following additional player skins are available as additional plugins.
+Simply drop one or more into your TiddlyWiki5. You can then easily switch
+between installed media player skins from the control panel: there's a new
+tab **Media Player Skins**.
+
+![Skin chooser in Control Panel](control panel skin chooser.png)
 
 | Skin | Showcase |
 | ---- | -------- |
