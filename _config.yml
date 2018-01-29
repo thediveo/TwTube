@@ -1,0 +1,8 @@
+title: TwTube
+description: Embedding the Video.js Video Player in TW5.
+google_analytics: 
+show_downloads: true
+theme: jekyll-theme-minimal
+
+gems:
+  - jekyll-mentions
