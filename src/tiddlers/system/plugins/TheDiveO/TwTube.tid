@@ -4,13 +4,13 @@ created: 20140902114846490
 creator: TheDiveO
 description: Video.js: Your own Tube in a TiddlyWiki
 list: readme license history
-modified: 20180128162258549
+modified: 20180209155410199
 modifier: TheDiveO
 plugin-type: plugin
 source: http://thediveo.github.io/TwTube
 tags: $:/tags/TwTubeVideojsSkinPlugin
 title: $:/plugins/TheDiveO/TwTube
 type: application/json
-version: 1.0.6
+version: 1.0.7
 
 {"tiddlers": {}}
