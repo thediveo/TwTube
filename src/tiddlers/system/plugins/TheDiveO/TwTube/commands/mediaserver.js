@@ -38,6 +38,8 @@ exports.info = {
 	synchronous: true
 };
 
+var SANITIZE_REGEX = /[|\\{}()[\]^$+*?.]/g;
+
 // The --mediaserver command constructor. In our specific case,
 // we make use of JavaScript's object-based and prototype-based
 // language/runtime system: in order to inherit the base functionality
@@ -59,7 +61,7 @@ var Command = function(params, commander, callback) {
 		// URL prefix explicitly specified, so we use that. For convenience,
 		// we accept relative prefixes which are then interpreted as relative
 		// to the prefix "/".
-		urlprefix = new URL(urlprefix, "/").pathname;
+		urlprefix = decodeURI(url.resolve("/", url.parse(urlprefix).pathname));
 	} else {
 		// no URL prefix specified, so let's use either a prefix relative
 		// to the CWD or an absolute prefix in case the media files are
@@ -94,7 +96,9 @@ var Command = function(params, commander, callback) {
 	// handling of media resources...
 	svrcmd.inheritedExecute = svrcmd.execute;
 	svrcmd.execute = function() {
-		$tw.utils.log("Media serving from " + mediapath + " at path " + urlprefix,
+		$tw.utils.log("Media serving from " + mediapath
+		  + " at URL path " + urlprefix
+			+ " (regex: '" + encodeURI(urlprefix).replace(SANITIZE_REGEX, "\\$&") + "')",
 			"brown/orange");
 		return this.inheritedExecute();
 	};
@@ -104,7 +108,7 @@ var Command = function(params, commander, callback) {
 	// are then served from the local mediapath file space.
 	svrcmd.server.addRoute({
 		method: "GET",
-		path: new RegExp("^" + urlprefix + "(.+)$"),
+		path: new RegExp("^" + encodeURI(urlprefix).replace(SANITIZE_REGEX, "\\$&") + "(.+)$"),
 		handler: function(request, response, state) {
 			// Get the URL path and resource name, and make sure
 			// that the client cannot play tricks on us by trying
@@ -112,7 +116,7 @@ var Command = function(params, commander, callback) {
 			// "../" path elements.
 			try {
 				var medrsc = mediapath
-					+ decodeURIComponent(url.parse(request.url).pathname)
+					+ decodeURI(url.parse(request.url).pathname)
 							.substr(urlprefix.length-1);
 			} catch (err) {
 				$tw.utils.log("400 " + request.url, "brown/orange");

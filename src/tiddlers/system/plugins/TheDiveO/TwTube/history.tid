@@ -1,10 +1,13 @@
 created: 20140902083720188
 creator: TheDiveO
-modified: 20180128162339972
+modified: 20180209155135102
 modifier: TheDiveO
 title: $:/plugins/TheDiveO/TwTube/history
 type: text/vnd.tiddlywiki
 
+* ''next''
+** fixes media URL/path handling in media server.
+** fixes crash in parsing media alias `path=urlpath` parameter handling.
 * ''1.0.6''
 ** adds media player skin selection to the [[control panel|$:/ControlPanel]]: see tab "Media Player Skins". The current selection is stored in [[$:/config/TwTube/skin]] and containes the title of the selected skin plugin, or [[$:/plugins/TheDiveO/TwTube]].
 * ''1.0.5''
