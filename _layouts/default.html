@@ -38,8 +38,10 @@
           <h2>Downloads</h2>
 
           {% for dl in site.project_downloads %}
-            <div class="download"><a href="{{ dl[1].url | relative_url }}">{{ dl[1].description }}</a></div>
+            <div class="download"><a href="{{ dl[1].url | relative_url }}" download="{{ dl[1].url | split: "/" | last }}">{{ dl[1].description }}</a></div>
           {% endfor %}
+
+          <p>Note: you may need to right click and then choose "download" on some (older) web browsers.</p>
         {% endif %}
       </header>
       <section>
