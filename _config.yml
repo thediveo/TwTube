@@ -10,8 +10,17 @@ project_downloads:
   twtube_plugin:
     description: "TwTube plugin"
     url: output/twtube.tid
-  demo:
-    description: "TwTube demo wiki"
-    url: output/twtube.html
+  iplayer_skin:
+    description: "iPlayer-inspired skin"
+    url: output/iplayerskin.tid
+  sublimeskin:
+    description: "Sublime-inspired skin"
+    url: output/sublimeskin.tid
+  ytskin:
+    description: "YouTube-inspired skin"
+    url: output/ytskin.tid
+  videojshotkey_plugin:
+    description: "Hotkey Video.js plugin"
+    url: output/videojshotkeys.tid
 gems:
   - jekyll-mentions
