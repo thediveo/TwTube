@@ -11,7 +11,7 @@ div.download + div.download {
   margin-top: 8px; // ugh, absolute pixel values :(
 }
 
-div.download + :not(div.download) {
+div.download + *:not(div.download) {
   margin-bottom: inherit;
 }
 
