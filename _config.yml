@@ -3,6 +3,8 @@ description: Brings the Video.js Media Player to TiddlyWiki5.
 google_analytics:
 show_downloads: true
 theme: jekyll-theme-minimal
-
+github:
+  zip_url: https://github.com/TheDiveO/TwTube/zipball/master
+  tar_url: https://github.com/TheDiveO/TwTube/tarball/master
 gems:
   - jekyll-mentions

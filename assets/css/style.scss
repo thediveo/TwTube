@@ -1,0 +1,19 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+// Tweak too-narrow line spacing in headings.
+h1, h2, h3 {
+    line-height: 1.3;
+}
+
+// Make it look like the vanilla TW5 theme.
+code {
+  color: #dd1144;
+  background-color: #f7f7f9;
+  border: 1px solid #e1e1e8;
+  white-space: pre-wrap;
+  padding: 0 3px 2px;
+  border-radius: 3px;
+}
