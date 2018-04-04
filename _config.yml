@@ -6,5 +6,12 @@ theme: jekyll-theme-minimal
 github:
   zip_url: https://github.com/TheDiveO/TwTube/zipball/master
   tar_url: https://github.com/TheDiveO/TwTube/tarball/master
+downloads:
+  - plugin_tid
+    description: TwTube plugin
+    url: output/twtube.tid
+  - plugin_demo
+    description: TwTube demo wiki
+    url: output/twtube.html
 gems:
   - jekyll-mentions
