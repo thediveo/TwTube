@@ -24,9 +24,3 @@ code {
   padding: 0 3px 2px;
   border-radius: 3px;
 }
-
-// Work around the mis-used li element in the header section...
-header ul.project-downloads,
-header ul.project-downloads li,
-header ul.project-downloads li a {
-}

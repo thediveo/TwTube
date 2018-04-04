@@ -37,11 +37,9 @@
         {% if site.project_downloads.size %}
           <h2>Downloads:</h2>
 
-          <ul class="project-downloads">
           {% for download in site.project_downloads %}
-            <li><a href="{{ download.url }}">{{ download.description }}</a></li>
+            <p><a href="{{ download.url }}">{{ download.description }}</a></p>
           {% endfor %}
-          </ul>
         {% endif %}
       </header>
       <section>
