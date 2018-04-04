@@ -1,8 +1,8 @@
 # Video.js Media Player for TiddlyWiki5
 
-Simply install this [TwTube plugin](https://github.com/TheDiveO/TwTube/releases/latest)
-to bring the [Video.js Media Player](https://videojs.com/)
-to [TiddlyWiki5](https://tiddlywiki.com/).
+Simply download the [TwTube plugin](output/twtube.tid) and then drag and
+drop it into your TiddlyWiki in order to enjoy the
+[Video.js Media Player](https://videojs.com/).
 
 ![TwTube demo wiki screenshot](screenshot twtube.png)
 
