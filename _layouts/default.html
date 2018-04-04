@@ -35,10 +35,10 @@
         {% endif %}
 
         {% if site.project_downloads.size %}
-          <h2>Downloads:</h2>
+          <h2>Downloads</h2>
 
           {% for dl in site.project_downloads %}
-            <p><a href="{{ dl[1].url }}">{{ dl[1].description }}</a></p>
+            <div class="download"><a href="{{ dl[1].url }}">{{ dl[1].description }}</a></div>
           {% endfor %}
         {% endif %}
       </header>

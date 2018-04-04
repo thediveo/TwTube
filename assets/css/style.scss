@@ -3,6 +3,10 @@
 
 @import "{{ site.theme }}";
 
+div.download {
+  margin-bottom: 8px; // ugh, absolute pixel values :(
+}
+
 // Tweak too-narrow line spacing in headings.
 h1, h2, h3 {
     line-height: 1.3;
