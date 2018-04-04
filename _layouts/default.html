@@ -38,7 +38,7 @@
           <h2>Downloads:</h2>
 
           {% for dl in site.project_downloads %}
-            <p><a href="{{ dl.url }}">{{ dl.description }}</a></p>
+            <p><a href="{{ dl[1].url }}">{{ dl[1].description }}</a></p>
           {% endfor %}
         {% endif %}
       </header>
