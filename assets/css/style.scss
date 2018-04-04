@@ -12,7 +12,7 @@ div.download + div.download {
 }
 
 div.download + :not(div.download) {
-  margin-bottom: 12px;
+  margin-top: 12px;
 }
 
 // Tweak too-narrow line spacing in headings.
