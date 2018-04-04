@@ -3,8 +3,16 @@
 
 @import "{{ site.theme }}";
 
-div.download:not(:last-child) {
-  margin-bottom: 8px; // ugh, absolute pixel values :(
+div.download {
+  margin-bottom: 0;
+}
+
+div.download + div.download {
+  margin-top: 8px; // ugh, absolute pixel values :(
+}
+
+div.download + :not(div.download) {
+  margin-bottom: inherit;
 }
 
 // Tweak too-narrow line spacing in headings.
