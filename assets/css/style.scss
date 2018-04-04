@@ -3,7 +3,7 @@
 
 @import "{{ site.theme }}";
 
-div.download {
+div.download:not(:last-child) {
   margin-bottom: 8px; // ugh, absolute pixel values :(
 }
 
