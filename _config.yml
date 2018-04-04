@@ -7,11 +7,11 @@ github:
   zip_url: https://github.com/TheDiveO/TwTube/zipball/master
   tar_url: https://github.com/TheDiveO/TwTube/tarball/master
 project_downloads:
-  twtube_plugin
-    description: TwTube plugin
-    url: output/twtube.tid
-  demo
-    description: TwTube demo wiki
-    url: output/twtube.html
+  - twtube_plugin:
+      description: "TwTube plugin"
+      url: output/twtube.tid
+  - demo:
+      description: "TwTube demo wiki"
+      url: output/twtube.html
 gems:
   - jekyll-mentions
