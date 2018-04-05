@@ -23,7 +23,8 @@
   },
   "dependencies": {
     "tiddlywiki": ">=5.1.15",
-    "tw5-thirdflow": ">=1.2.0"
+    "tw5-thirdflow": ">=1.2.0",
+    "video.js": ">=6.6.0"
   },
   "engines": {
     "node": ">=4.8.0"

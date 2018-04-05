@@ -1,6 +1,13 @@
 {
   "tiddlers": [
-    { "file": "../../../node_modules/tw5-thirdflow/editions/release/output/thirdflow.tid", 
-      "isTiddlerFile": "true" }
+    { "file": "../../../node_modules/tw5-thirdflow/editions/release/output/thirdflow.tid",
+      "isTiddlerFile": "true" },
+    { "file": "../../../node_modules/video.js/dist/video.js",
+      "isTiddlerFile": "false",
+      "fields": {
+        "title": "$:/plugins/TheDiveO/TwTube/libraries/video.js",
+        "type": "application/javascript",
+        "module-type": "library"
+      } }
   ]
 }
