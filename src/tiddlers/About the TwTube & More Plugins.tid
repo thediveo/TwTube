@@ -1,11 +1,11 @@
 created: 20141001162614812
 creator: TheDiveO
-modified: 20180127151053639
+modified: 20180405131038307
 modifier: TheDiveO
 title: About the TwTube & More Plugins
 type: text/vnd.tiddlywiki
 
-! ~TwTube ~TiddylWiki Plugin
+! ~TwTube ~TiddlyWiki Plugin
 
 This is the ''~TwTube'' plugin version "<$view tiddler="$:/plugins/TheDiveO/TwTube" field="version" />" (<$list filter="[[$:/plugins/TheDiveO/TwTube/readme]is[shadow]]" emptyMessage="<span style='color: #c00; font-weight: bold'>development</span>">release</$list> wiki).
 
