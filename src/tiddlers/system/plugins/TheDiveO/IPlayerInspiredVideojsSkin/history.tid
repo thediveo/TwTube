@@ -1,9 +1,10 @@
 created: 20180114170309007
-modified: 20180128162501143
+modified: 20180405141531076
 tags: 
 title: $:/plugins/TheDiveO/IPlayerInspiredVideojsSkin/history
 type: text/vnd.tiddlywiki
 
+* ''1.0.3'' -- uses npm package `videojs-iplayer-skin-1`.
 * ''1.0.2'' -- adds `caption` field to support new skin selection in the Control Panel tab "Media Player Skins".
 * ''1.0.1'' -- adds support for centered (big) play button, similar to what is supported in the default skin as well as some other skins.
 * ''1.0.0'' -- first release of the iPlayer-inspired Video.js Skin plugin.

@@ -21,6 +21,13 @@
         "title": "$:/plugins/TheDiveO/IPlayerInspiredVideojsSkin/styles/skin.css",
         "type": "text/css",
         "tags": "$:/tags/TwTubeVideojsSkin" },
-      "prefix": "/* automatically included from npm package `videojs-iplayer-skin-1` */\r\n" }
+      "prefix": "/* automatically included from npm package `videojs-iplayer-skin-1` */\r\n" },
+    { "file": "../../../node_modules/videojs-hotkeys/videojs.hotkeys.js",
+      "isTiddlerFile": "false",
+      "fields": {
+        "title": "$:/plugins/TheDiveO/VideojsHotkeys/videojs.hotkeys.js",
+        "type": "application/javascript",
+        "tags": "$:/tags/VideojsPlugin" },
+      "prefix": "/* automatically included from npm package `videojs-hotkeys` */\r\n" }
   ]
 }

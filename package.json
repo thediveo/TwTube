@@ -25,7 +25,8 @@
     "tiddlywiki": ">=5.1.15",
     "tw5-thirdflow": ">=1.2.0",
     "video.js": ">=6.6.0",
-    "videojs-iplayer-skin-1": ">=1.0.1"
+    "videojs-iplayer-skin-1": ">=1.0.1",
+    "videojs-hotkeys": ">=0.2.21"
   },
   "engines": {
     "node": ">=4.8.0"
