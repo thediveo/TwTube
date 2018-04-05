@@ -1,8 +1,8 @@
-# Video.js Media Player for TiddlyWiki5
+# Video.js Media Player for TiddlyWiki&nbsp;5
 
-Simply download the [TwTube plugin](output/twtube.tid) and then drag and
-drop it into your TiddlyWiki in order to enjoy the
-[Video.js Media Player](https://videojs.com/).
+Simply download the <i class="fas fa-download"/>&nbsp;[TwTube plugin](output/twtube.tid)
+and then drag and drop it into your TiddlyWiki in order to enjoy the
+<i class="fas fa-external-link-alt"/>&nbsp;[Video.js Media Player](https://videojs.com/).
 
 ![TwTube demo wiki screenshot](screenshot twtube.png)
 
@@ -13,9 +13,9 @@ Wait, there's more:
 
 # Live Demonstration
 
-Take a <i class="fas fa-eye"/>[live tour](https://thediveo.github.io/TwTube/output/twtube.html) to see
-how TwTube works. And learn more about how to use the TwTube plugin in your own
-TiddlyWikis.
+Take a <i class="fas fa-eye"/>&nbsp;[live tour](https://thediveo.github.io/TwTube/output/twtube.html)
+to see how TwTube works. And learn more about how to use the TwTube plugin in
+your own TiddlyWikis.
 
 
 # Skin Plugins
