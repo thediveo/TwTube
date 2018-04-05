@@ -8,9 +8,17 @@ drop it into your TiddlyWiki in order to enjoy the
 
 Wait, there's more:
 * customize the visual appearance of the media player with **skin plugins**.
-* enhance player functionality using Video.js plugins.
+* enhance player functionality using **Videojs plugins**.
 
-## Skin Pugins
+
+# Live Demonstration
+
+Take a [live tour](https://thediveo.github.io/TwTube/output/twtube.html) to see
+how TwTube works. And learn more about how to use the TwTube plugin in your own
+TiddlyWikis.
+
+
+# Skin Plugins
 
 The following additional player skins are available as additional plugins.
 Simply drop one or more into your TiddlyWiki5. You can then easily switch
@@ -25,16 +33,10 @@ tab **Media Player Skins**.
 | Sublime-inspired | ![](sl-inspired skin.png) |
 | YouTube-inspired | ![](yt-inspired skin.png) |
 
-## Videojs Plugins
+# Videojs Plugins
 
-The following functional enhancements are currently available:
+The following functional enhancements are currently available for Video.js/TwTube:
 
 * **persistent volume** stores your volume+mute settings in your browser
   storage. This plugin is already included in the base TwTube plugin.
 * **hotkeys** for play/pause, forward, rewind, et cetera.
-
-
-# Live Demonstration
-
-Take a [live tour](https://thediveo.github.io/TwTube/output/twtube.html) to see how TwTube
-works. And learn more about how to use the TwTube plugin in your own TiddlyWikis.
