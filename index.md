@@ -8,7 +8,7 @@ and then drag and drop it into your TiddlyWiki in order to enjoy the
 
 Wait, there's more:
 * customize the visual appearance of the media player with **skin plugins**.
-* enhance player functionality using **Videojs plugins**.
+* enhance the Video.js player functionality using **Videojs plugins**.
 
 
 # Live Demonstration
@@ -20,14 +20,14 @@ your own TiddlyWikis.
 
 # Skin Plugins
 
-The following additional player skins are available as additional plugins.
-Simply drop one or more into your TiddlyWiki5. You can then easily switch
-between installed media player skins from the control panel: there's a new
-tab **Media Player Skins**.
+The following additional player skins are available as individual TiddlyWiki&nbsp;5 plugins.
+Simply drop one or more of them into your TiddlyWiki. You can then easily switch
+between the installed media player skins at any time in control panel, using the new
+**Media Player Skins** tab.
 
 ![Skin chooser in Control Panel](control panel skin chooser.png)
 
-| Skin | Showcase |
+| Skin | Screenshot |
 | ---- | -------- |
 | iPlayer-inspired | ![](ip-inspired skin.png) |
 | Sublime-inspired | ![](sl-inspired skin.png) |
@@ -35,8 +35,11 @@ tab **Media Player Skins**.
 
 # Videojs Plugins
 
-The following functional enhancements are currently available for Video.js/TwTube:
+The following functional Video.js enhancements are currently available for TwTube:
 
 * **persistent volume** stores your volume+mute settings in your browser
   storage. This plugin is already included in the base TwTube plugin.
 * **hotkeys** for play/pause, forward, rewind, et cetera.
+
+Simply download the corresponding plugins, then drop them into your TiddlyWiki
+together with the TwTube plugin.
