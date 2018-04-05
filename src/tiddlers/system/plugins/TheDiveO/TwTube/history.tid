@@ -1,25 +1,34 @@
 created: 20140902083720188
 creator: TheDiveO
-modified: 20180209155424655
+modified: 20180405131101107
 modifier: TheDiveO
 title: $:/plugins/TheDiveO/TwTube/history
 type: text/vnd.tiddlywiki
 
+* ''1.0.8''
+** publishes TwTube plugin as npm package `tw5-twtube`.
+** fixes spelinng.
+
 * ''1.0.7''
 ** fixes media URL/path handling in media server.
 ** fixes crash in parsing media alias `path=urlpath` parameter handling.
+
 * ''1.0.6''
 ** adds media player skin selection to the [[control panel|$:/ControlPanel]]: see tab "Media Player Skins". The current selection is stored in [[$:/config/TwTube/skin]] and containes the title of the selected skin plugin, or [[$:/plugins/TheDiveO/TwTube]].
+
 * ''1.0.5''
 ** adds support for Video.js plugins.
 ** adds Video.js persistent volume plugin.
 ** adds Video.js hotkeys plugin.
 ** adds pseudo node main package, so you can run the development server also using `$ node ./twtube`.
 ** fixes handling of media resources where their paths and/or filename contain URI encoded characters.
+
 * ''1.0.3''
 ** adds new ~YouTube-inspired skin, generated with the [[Videojs Skin Generator|http://www.scriptsmashup.com/Video_Skin_Generator/Videojs/videojs-skin-generator.html]] and some tweaking.
+
 * ''1.0.2''
 ** fixes `poster` attribute of `<$videjs>` widget to be overwritten with the value of the `preload` attribute.
+
 * ''1.0.0''
 ** introduces `<$videojs>` [[Video.js player|https://videojs.com/]] widget to ~TiddlyWiki 5.
 ** supports most of the attributes (parameters) the `<video>` and `<video-js>` elements have to offer.

@@ -1,0 +1,94 @@
+# TwTube: Travis Continous Integration
+#
+# Testing is only done in a very simplistic manner by running a TiddlyWiki
+# under Node.js which in turns loads all stuff. If that succeeds, the test
+# is considered to be good.
+#
+# Building runs the --release command on this TiddlyWiki, which then uses
+# ThirdFlow's automated release mechnism to generate the release files.
+#
+# Deploying does three things:
+# 1. Uploading the release files to the GitHub Pages for this GitHub project.
+# 2. Publishing the package on NPM.
+# 3. Drafting a new GitHub release and attaching the release files to it.
+
+language: node_js
+node_js: 'node' # latest stable Node.js release
+
+branches:
+  only:
+    - master
+    - /^\d+\.\d+\.\d+*$/
+
+env:
+  global:
+    - OUTPUT_DIR=editions/release/output
+    - GH_PAGES_DIR=gh-pages
+    - GH_PAGES_OUTPUT_DIR=$GH_PAGES_DIR/output
+
+cache:
+  directories:
+    - "node_modules"
+
+before_install:
+  # As we only want to update the release files in our GitHub Pages, we
+  # need to get the gh-pages branch first. Later, after updating the release
+  # files, the deployment will check in the complete gh-pages branch again
+  # -- including the updated release files.
+  - git clone --branch gh-pages --single-branch --depth 1 https://github.com/$TRAVIS_REPO_SLUG gh-pages
+
+script:
+  - if [ -z "$TRAVIS_TAG" ]; then npm test; fi
+  - if [ -n "$TRAVIS_TAG" ]; then npm run update; fi
+  - npm run release
+    # Copy release files to our GitHub Pages for this project.
+  - cp $OUTPUT_DIR/twtube.tid $GH_PAGES_OUTPUT_DIR
+  - cp $OUTPUT_DIR/twtube.html $GH_PAGES_OUTPUT_DIR
+  - cp $OUTPUT_DIR/iplayerskin.tid $GH_PAGES_OUTPUT_DIR
+  - cp $OUTPUT_DIR/sublimeskin.tid $GH_PAGES_OUTPUT_DIR
+  - cp $OUTPUT_DIR/ytskin.tid $GH_PAGES_OUTPUT_DIR
+  - cp $OUTPUT_DIR/videojshotkeys.tid $GH_PAGES_OUTPUT_DIR
+
+deploy:
+  # Uploads new release files to the GitHub pages of our project...
+  - provider: pages
+    github-token:
+      secure: XhH8Lnea5Tujjdcpi+mj3ndCQXCDHyrgkNkndo9osHCZK6c1mLCFmH3IqACuGdwRDP7Bmn7+bP/oed/YQXvOtFRMsL0iEcszkgBvQ6ZSwPl2XGXWM2OzuhxqrkkD4sFsq+W6NzRiZqPKFrXixmCdP4oE9yEo/jYpp+muzJmS+9S0IBGgTralpWKdoAWaGzXkyjAMqMGGY91oXUb95uTRd7WSUkf4Vci1HR55JWsP4E+Zr0m+ZWwP/zBiKKfpAaM7jlmA01b2+nMC1V6zHimB81AHVsaxM+Ywpi3IIrXYUzXv4ftFj84EcywtDMOdXcMjJPK3YJG8T3j37zISIFrTdRcOVLvJeCfftr48RuirTa6mjWo/9P6RFuiKnDLGfhW4MdLSGOSv7p6FRzFsBvONQxzDpNuOdqZMYvF3FT+yyeVIenzpKU2IOgPbgZg1FN7DS9dLYid0VU0kZmYn3onp7B6z9CerWB/zPOdTEkzANgQXpyQjZHPFSZzn4+CofkQCMJUsubt/q0SNeVu5z+n/070MjSzNo2W3Gurp7IF+m2wI2TUOmk8U7G4icNOS0+LasMtLSnyiEpscNnnT1C0lGz8/XderZBFrSUAVCI3VeC8im2LYZlQP4R0MsUJn7bmQmdnO7q1hyylQHiTIZllyLAlYez6qz+oyKtEXMxFT4T0=
+    skip_cleanup: true
+    keep-history: true
+    on:
+      repo: $TRAVIS_REPO_SLUG
+      tags: true
+    local-dir: $GH_PAGES_DIR
+
+  # Publish new release on NPM registry
+  - provider: npm
+    email: thediveo@gmx.eu
+    api_key:
+      secure: iIXIlSVh4tlPwFWgaYAYfW4MPiqJfKilG+Yx2/CEnnrhFbMVquw2jBguZWK5EvZLtbgdlRY5405XSUfhRDdGq4D4akHlYEbBrJy6hgKhSDOhnAZAl3Oq0rnDDZwdjUOuLnvGi0VwmCnI2mA0Bv/2hWQKAHwmyQKOESN3heAU7pEviGJfOdu1xayWbtdssiVZDdG2V/rnve5qNc6Fssg2XpeacXgmKzyNdyuJ1tf0ZEjYZDD22KkQptqmxSmrIN3Phy2qLLgaaNp23PgZzKEzWtj1tt8Gl7JoI+7ECrEm/o+zprd8o4aoaMdVJSZCsFJHbPUBd8WxcSNf+oeClsydj0ucJFwptTUWmeBrDQ3DJwLPTL/pDgBy+zd7eSf7iRQEHNNvDYcu1Pr1xzQIdBCfffY9vITStOEF013oX/Jl4UpOp7PoTnFIafhF2NQclW32WD4DfT2pROtqyJkr76pCWBmfN50wCr2EsoIO4s26BGiffRvf+F4k7kx1WMSICrZKqfQJYHrrAPeoC03iE1r11mmtcNlW63ONZrTWWQc8zIFy00V/v130agzKf9LUBPZ2A/JdMcZZe0dlItcWPJLAjl0FkGA9+4UGrpDOJmFFLyyRDK/0N9G+N3TOi+Y+mRU9LC9zJxwWjG6j8fO7Uc0UmMVzY+zXC8cCUEH0YbjhUIs=
+    skip_cleanup: true
+    on:
+      repo: $TRAVIS_REPO_SLUG
+      tags: true
+
+  # Drafts a new release and attaches the release files...
+  - provider: releases
+    api_key:
+      secure: XhH8Lnea5Tujjdcpi+mj3ndCQXCDHyrgkNkndo9osHCZK6c1mLCFmH3IqACuGdwRDP7Bmn7+bP/oed/YQXvOtFRMsL0iEcszkgBvQ6ZSwPl2XGXWM2OzuhxqrkkD4sFsq+W6NzRiZqPKFrXixmCdP4oE9yEo/jYpp+muzJmS+9S0IBGgTralpWKdoAWaGzXkyjAMqMGGY91oXUb95uTRd7WSUkf4Vci1HR55JWsP4E+Zr0m+ZWwP/zBiKKfpAaM7jlmA01b2+nMC1V6zHimB81AHVsaxM+Ywpi3IIrXYUzXv4ftFj84EcywtDMOdXcMjJPK3YJG8T3j37zISIFrTdRcOVLvJeCfftr48RuirTa6mjWo/9P6RFuiKnDLGfhW4MdLSGOSv7p6FRzFsBvONQxzDpNuOdqZMYvF3FT+yyeVIenzpKU2IOgPbgZg1FN7DS9dLYid0VU0kZmYn3onp7B6z9CerWB/zPOdTEkzANgQXpyQjZHPFSZzn4+CofkQCMJUsubt/q0SNeVu5z+n/070MjSzNo2W3Gurp7IF+m2wI2TUOmk8U7G4icNOS0+LasMtLSnyiEpscNnnT1C0lGz8/XderZBFrSUAVCI3VeC8im2LYZlQP4R0MsUJn7bmQmdnO7q1hyylQHiTIZllyLAlYez6qz+oyKtEXMxFT4T0=
+    skip_cleanup: true
+    target_commitish: $TRAVIS_COMMIT
+    tag_name: $TRAVIS_TAG
+    overwrite: true # overwrite existing release files
+    file:
+      - $OUTPUT_DIR/twtube.html
+      - $OUTPUT_DIR/twtube.tid
+      - $OUTPUT_DIR/iplayerskin.tid
+      - $OUTPUT_DIR/sublimeskin.tid
+      - $OUTPUT_DIR/ytskin.tid
+      - $OUTPUT_DIR/videojshotkeys.tid
+    on:
+      repo: $TRAVIS_REPO_SLUG
+      tags: true
+    name: TwTube plugin release $TRAVIS_TAG
+    body: 'see plugin history tiddler'
+    draft: true
