@@ -8,7 +8,7 @@ and then drag and drop it into your TiddlyWiki in order to enjoy the
 
 Wait, there's more:
 * customize the visual appearance of the media player with **skin plugins**.
-* enhance the Video.js player functionality using **Videojs plugins**.
+* enhance the media player functionality using **Videojs plugins**.
 
 
 # Live Demonstration
