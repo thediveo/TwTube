@@ -7,13 +7,13 @@
       "fields": {
         "title": "$:/plugins/TheDiveO/TwTube/libraries/video.js",
         "type": "application/javascript",
-        "module-type": "library"
-      } },
+        "module-type": "library" },
+      "prefix": "/* automatically included from npm package `video.js` */\r\n" },
     { "file": "../../../node_modules/video.js/dist/video-js.css",
       "isTiddlerFile": "false",
       "fields": {
         "title": "$:/plugins/TheDiveO/TwTube/styles/videojs.css",
-        "type": "text/css"
-      } }
+        "type": "text/css" },
+      "prefix": "/* automatically included from npm package `video.js` */\r\n" }
   ]
 }

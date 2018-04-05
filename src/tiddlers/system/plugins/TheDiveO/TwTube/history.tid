@@ -1,9 +1,12 @@
 created: 20140902083720188
 creator: TheDiveO
-modified: 20180405131101107
+modified: 20180405135102787
 modifier: TheDiveO
 title: $:/plugins/TheDiveO/TwTube/history
 type: text/vnd.tiddlywiki
+
+* ''1.0.9''
+** upgrades Video.js media player to 6.7.3.
 
 * ''1.0.8''
 ** publishes TwTube plugin as npm package `tw5-twtube`.
