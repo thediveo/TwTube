@@ -7,27 +7,39 @@
       "fields": {
         "title": "$:/plugins/TheDiveO/TwTube/libraries/video.js",
         "type": "application/javascript",
-        "module-type": "library" },
+        "module-type": "library",
+        "created": "20140902114846490",
+        "creator": "TheDiveO",
+        "modified": "20140902114846490" },
       "prefix": "/* automatically included from npm package `video.js` */\r\n" },
     { "file": "../../../node_modules/video.js/dist/video-js.css",
       "isTiddlerFile": "false",
       "fields": {
         "title": "$:/plugins/TheDiveO/TwTube/styles/videojs.css",
-        "type": "text/css" },
+        "type": "text/css",
+        "created": "20140902114846490",
+        "creator": "TheDiveO",
+        "modified": "20140902114846490" },
       "prefix": "/* automatically included from npm package `video.js` */\r\n" },
     { "file": "../../../node_modules/videojs-iplayer-skin-1/dist/videojs-iplayer-theme.css",
       "isTiddlerFile": "false",
       "fields": {
         "title": "$:/plugins/TheDiveO/IPlayerInspiredVideojsSkin/styles/skin.css",
         "type": "text/css",
-        "tags": "$:/tags/TwTubeVideojsSkin" },
+        "tags": "$:/tags/TwTubeVideojsSkin",
+        "created": "20140902114846490",
+        "creator": "TheDiveO",
+        "modified": "20140902114846490" },
       "prefix": "/* automatically included from npm package `videojs-iplayer-skin-1` */\r\n" },
     { "file": "../../../node_modules/videojs-hotkeys/videojs.hotkeys.js",
       "isTiddlerFile": "false",
       "fields": {
         "title": "$:/plugins/TheDiveO/VideojsHotkeys/videojs.hotkeys.js",
         "type": "application/javascript",
-        "tags": "$:/tags/VideojsPlugin" },
+        "tags": "$:/tags/VideojsPlugin",
+        "created": "20140902114846490",
+        "creator": "TheDiveO",
+        "modified": "20140902114846490" },
       "prefix": "/* automatically included from npm package `videojs-hotkeys` */\r\n" }
   ]
 }
