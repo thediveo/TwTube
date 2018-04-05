@@ -14,6 +14,13 @@
       "fields": {
         "title": "$:/plugins/TheDiveO/TwTube/styles/videojs.css",
         "type": "text/css" },
-      "prefix": "/* automatically included from npm package `video.js` */\r\n" }
+      "prefix": "/* automatically included from npm package `video.js` */\r\n" },
+    { "file": "../../../node_modules/videojs-iplayer-skin-1/dist/videojs-iplayer-theme.css",
+      "isTiddlerFile": "false",
+      "fields": {
+        "title": "$:/plugins/TheDiveO/IPlayerInspiredVideojsSkin/styles/skin.css",
+        "type": "text/css",
+        "tags": "$:/tags/TwTubeVideojsSkin" },
+      "prefix": "/* automatically included from npm package `videojs-iplayer-skin-1` */\r\n" }
   ]
 }
