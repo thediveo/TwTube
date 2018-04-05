@@ -13,7 +13,7 @@ Wait, there's more:
 
 # Live Demonstration
 
-Take a [live tour](https://thediveo.github.io/TwTube/output/twtube.html) to see
+Take a <i class="fas fa-eye"/>[live tour](https://thediveo.github.io/TwTube/output/twtube.html) to see
 how TwTube works. And learn more about how to use the TwTube plugin in your own
 TiddlyWikis.
 
