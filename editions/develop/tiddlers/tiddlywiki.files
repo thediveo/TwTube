@@ -8,6 +8,12 @@
         "title": "$:/plugins/TheDiveO/TwTube/libraries/video.js",
         "type": "application/javascript",
         "module-type": "library"
+      } },
+    { "file": "../../../node_modules/video.js/dist/video-js.css",
+      "isTiddlerFile": "false",
+      "fields": {
+        "title": "$:/plugins/TheDiveO/TwTube/styles/videojs.css",
+        "type": "text/css"
       } }
   ]
 }
